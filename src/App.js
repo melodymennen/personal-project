@@ -8,8 +8,8 @@ import NewRecipe from './components/NewRecipe';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        < Home />
+      <div>
+        < NewRecipe />
       </div>
     );
   }

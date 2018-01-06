@@ -1,5 +1,5 @@
-const intitalState = { 
-    id: 0, 
+const initialState = { 
+    id: '', 
     name: '',
     category_id: 0, 
     ingredients: '',
