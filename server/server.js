@@ -11,7 +11,7 @@ app.use(cors());
 
 massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db',db)
-})
+});
 
 const port = process.env.PORT
 app.listen(port, () => console.log(`listening on port ${port}`));
