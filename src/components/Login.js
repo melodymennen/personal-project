@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <header>
+        <div>
             <div>Site Name/Logo</div>
             <div><Link path to='/home'>Login/Register</Link></div>
-        </header>
+        </div>
     )
 }
 
