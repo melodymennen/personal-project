@@ -13,9 +13,14 @@ class NewRecipe extends Component {
                 <select onChange={e => updateCategory(e.target.value)}>
                     <option>select</option>
                     <option>appetizers</option>
-                    <option>main</option>
-                    <option>dessert</option>
-                    <option>etc</option>
+                    <option>beverages</option>
+                    <option>breads</option>
+                    <option>breakfast</option>
+                    <option>desserts</option>
+                    <option>lunch</option>
+                    <option>main dishes</option>
+                    <option>side dishes</option>
+                    <option>soups/salads</option>
                 </select>
                 Ingredients 
                 <input placeholder='recipe ingredients' onChange={e => updateIngredients(e.target.value)}/>
