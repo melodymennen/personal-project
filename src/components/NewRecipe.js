@@ -4,6 +4,12 @@ import {updateName, updateCategory, updateIngredients, updateDirections, updateN
 
 class NewRecipe extends Component {
 
+    handleSubmit(){
+        const body = {
+
+        }
+    }
+
     render () {
         return (
             <div>
@@ -12,15 +18,15 @@ class NewRecipe extends Component {
                 Category 
                 <select onChange={e => updateCategory(e.target.value)}>
                     <option>select</option>
-                    <option>appetizers</option>
-                    <option>beverages</option>
-                    <option>breads</option>
-                    <option>breakfast</option>
-                    <option>desserts</option>
-                    <option>lunch</option>
-                    <option>main dishes</option>
-                    <option>side dishes</option>
-                    <option>soups/salads</option>
+                    <option value='1'>appetizers</option>
+                    <option value='2'>beverages</option>
+                    <option value='3'>breads</option>
+                    <option value='4'>breakfast</option>
+                    <option value='5'>desserts</option>
+                    <option value='6'>lunch</option>
+                    <option value='7'>main dishes</option>
+                    <option value='8'>side dishes</option>
+                    <option value='9'>soups/salads</option>
                 </select>
                 Ingredients 
                 <input placeholder='recipe ingredients' onChange={e => updateIngredients(e.target.value)}/>
@@ -28,6 +34,7 @@ class NewRecipe extends Component {
                 <input placeholder='recipe directions' onChange={e => updateDirections(e.target.value)}/>
                 Notes 
                 <input placeholder='notes' onChange={e => updateNotes(e.target.value)}/>
+                <button onClick={() => handleSubmit()}>Save Recipe</button>
             </div>
         )
     }
