@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {updateName, updateCategory, updateIngredients, updateDirections, updateNotes} from '../ducks/reducer';
 import Header from './Header';
 
 class NewRecipe extends Component {
+    constructor(){
+        super()
+
+        this.state = {
+
+        }
+
+        this.updateName = this.updateName.bind(this)
+        this.updateCategory = this.updateCategory.bind(this)
+        this.updateIngredients = this.updateIngredients.bind(this)
+        this.updateDirections = this.updateDirections.bind(this)
+        this.updateNotes = this.updateNotes.bind(this)
+    }
+
+    updateName(){}
+
+    updateCategory(){}
+
+    updateIngredients(){}
+
+    updateDirections(){}
+
+    updateNotes(){}
 
     // handleSubmit(){
     //     const body = {
@@ -19,9 +40,9 @@ class NewRecipe extends Component {
                 </div>
                 <div>
                     Recipe Name 
-                    <input placeholder='recipe name' onChange={e => updateName(e.target.value)}/>
+                    <input placeholder='recipe name' onChange={e => this.updateName(e.target.value)}/>
                     Category 
-                    <select onChange={e => updateCategory(e.target.value)}>
+                    <select onChange={e => this.updateCategory(e.target.value)}>
                         <option>select</option>
                         <option value='1'>appetizers</option>
                         <option value='2'>beverages</option>
@@ -34,23 +55,17 @@ class NewRecipe extends Component {
                         <option value='9'>soups/salads</option>
                     </select>
                     Ingredients 
-                    <input placeholder='recipe ingredients' onChange={e => updateIngredients(e.target.value)}/>
+                    <input placeholder='recipe ingredients' onChange={e => this.updateIngredients(e.target.value)}/>
                     Directions 
-                    <input placeholder='recipe directions' onChange={e => updateDirections(e.target.value)}/>
+                    <input placeholder='recipe directions' onChange={e => this.updateDirections(e.target.value)}/>
                     Notes 
-                    <input placeholder='notes' onChange={e => updateNotes(e.target.value)}/>
-                    <button>Save Recipe</button>
+                    <input placeholder='notes' onChange={e => this.updateNotes(e.target.value)}/>
+                    <button onClick={() => this.handleSubmit()}>Save Recipe</button>
                 </div>
             </div>
         )
     }
 }
 
-function mapStateToProps(state){
-    const {name, category_id, ingredients, directions, notes} = state;
-    return {
-        name, category_id, ingredients, directions, notes
-    }
-}
 
-export default connect(mapStateToProps, {updateName, updateCategory, updateIngredients, updateDirections, updateNotes})(NewRecipe);
+export default NewRecipe;
