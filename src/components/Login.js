@@ -14,7 +14,14 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN)
+        var options = {
+            allowAutocomplete: true,
+            // theme: {
+            //     logo: 'https://example.com/logo.png',
+            //     primaryColor: '#31324F'
+            //   }
+          }
+        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN, options)
         this.lock.on('authenticated', authResult => {
             this.lock.getUserInfo(authResult.accessToken, (error, user) => {
                 axios.post('/login', {userId: user.sub}).then(response => {

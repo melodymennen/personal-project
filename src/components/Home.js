@@ -13,7 +13,7 @@ class Home extends Component {
                 <div>
                     Home <br />
                     <Link to='/all'>view all recipes </Link>
-                    <Link to='/categories'>view by categories </Link>
+                    <Link to='/categories'>view recipes by category </Link>
                 </div>
             </div>
         )
