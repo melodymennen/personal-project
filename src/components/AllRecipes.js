@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 
-class Home extends Component {
+class AllRecipes extends Component {
 
     render () {
         return (
@@ -11,13 +10,11 @@ class Home extends Component {
                     <Header />
                 </div>
                 <div>
-                    Home <br />
-                    <Link to='/all'>view all recipes </Link>
-                    <Link to='/categories'>view by categories </Link>
+                    AllRecipes
                 </div>
             </div>
         )
     }
 }
 
-export default Home;
+export default AllRecipes;

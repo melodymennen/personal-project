@@ -1,5 +1,5 @@
 module.exports = {
-    post: (req, res, next) => {
+    newRecipe: (req, res, next) => {
         const db =  req.app.get('db')
         const {name, category, ingredients, direction, notes} = req.body 
 
@@ -22,5 +22,13 @@ module.exports = {
     delete: (req, res, next) => {
         const db =  req.app.get('db')
         
-    } 
+    }, 
+    getFavorites: (req, res, next) => {
+        const db =  req.app.get('db')
+        
+    }, 
+    addFavorite: (req, res, next) => {
+        const db =  req.app.get('db')
+        
+    }
 }

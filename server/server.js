@@ -20,7 +20,13 @@ massive(process.env.CONNECTION_STRING).then(db => {
     console.log('error', error)
 });
 
-app.post('/api/recipes', controller.post)
+app.post('/api/recipes', controller.newRecipe)
+// app.post('/api/favorites', controller.addFavorite)
+// app.get('/api/recipes', controller.getAll)
+// app.get('/api/recipes/:category_id', controller.getCategory)
+// app.get('/api/favorites/:user_id', controller.getFavorites)
+// app.delete('/api/recipes/:recipe_id', controller.delete)
+// app.put('/api/recipes/:recipe_id', controller.update)
 
 const port = process.env.PORT
 app.listen(port, () => console.log(`listening on port ${port}`));
