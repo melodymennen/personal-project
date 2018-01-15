@@ -3,23 +3,23 @@ const initialState = {
 }
 
 
-const UPDATE_ID = 'UPDATE_ID';
+const LOGIN = 'LOGIN';
 
 
 function reducer (state = initialState, action){
     switch (action.type) {
-        case UPDATE_ID: 
-            return {...state, id: action.payload};
+        case LOGIN: 
+            return {...state, user: action.payload};
         default:
             return state;
     }
 }
 
 
-export function updateId (id) {
+export function login (user) {
     return {
-        type: UPDATE_ID,
-        payload: id
+        type: LOGIN,
+        payload: user
     }
 }
 

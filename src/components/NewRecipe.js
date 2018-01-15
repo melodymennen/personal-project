@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import axios from 'axios';
 
 class NewRecipe extends Component {
     constructor(){
         super()
 
         this.state = {
-
+            name: null,
+            category: null, 
+            ingredients: null,
+            directions: null,
+            notes: null
         }
 
         this.updateName = this.updateName.bind(this)
@@ -14,23 +19,48 @@ class NewRecipe extends Component {
         this.updateIngredients = this.updateIngredients.bind(this)
         this.updateDirections = this.updateDirections.bind(this)
         this.updateNotes = this.updateNotes.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    updateName(){}
+    updateName(value){
+        this.setState({name: value})
+    }
 
-    updateCategory(){}
+    updateCategory(value){
+        this.setState({category: value})
+    }
 
-    updateIngredients(){}
+    updateIngredients(value){
+        this.setState({ingredients: value})
+    }
 
-    updateDirections(){}
+    updateDirections(value){
+        this.setState({directions: value})
+    }
 
-    updateNotes(){}
+    updateNotes(value){
+        this.setState({notes: value})
+    }
 
-    // handleSubmit(){
-    //     const body = {
+    handleSubmit(){
+        const body = {
+            name: this.state.name,
+            category: this.state.category,
+            ingredients: this.state.ingredients, 
+            directions: this.state.directions,
+            notes: this.state.notes
+        }
 
-    //     }
-    // }
+        axios.post('http://localhost:3035/api/recipes', body).then(() => {
+            this.setState({
+                name: null,
+                category: null, 
+                ingredients: null,
+                directions: null,
+                notes: null
+            })
+        })
+    }
 
     render () {
         return (

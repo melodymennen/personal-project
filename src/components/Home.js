@@ -11,9 +11,9 @@ class Home extends Component {
                     <Header />
                 </div>
                 <div>
-                    home
-                    <Link to='/all'>view all recipes</Link>
-                    <Link to='/categories'>view by categories</Link>
+                    Home
+                    <Link to='/all'>view all recipes </Link>
+                    <Link to='/categories'>view by categories </Link>
                     find new recipes
                 </div>
             </div>
