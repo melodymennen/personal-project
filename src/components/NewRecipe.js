@@ -7,11 +7,11 @@ class NewRecipe extends Component {
         super()
 
         this.state = {
-            name: null,
-            category: null, 
-            ingredients: null,
-            directions: null,
-            notes: null
+            name: '',
+            category: 0, 
+            ingredients: '',
+            directions: '',
+            notes: ''
         }
 
         this.updateName = this.updateName.bind(this)
@@ -51,15 +51,19 @@ class NewRecipe extends Component {
             notes: this.state.notes
         }
 
-        axios.post('http://localhost:3035/api/recipes', body).then(() => {
-            this.setState({
-                name: null,
-                category: null, 
-                ingredients: null,
-                directions: null,
-                notes: null
+        if(this.state.category == 0){
+            alert('please select a category')
+        } else {
+            axios.post('/api/recipes', body).then(() => {
+                this.setState({
+                    name: '',
+                    category: 0, 
+                    ingredients: '',
+                    directions: '',
+                    notes: ''
+                })
             })
-        })
+        }
     }
 
     render () {
@@ -70,10 +74,10 @@ class NewRecipe extends Component {
                 </div>
                 <div>
                     Recipe Name 
-                    <input placeholder='recipe name' onChange={e => this.updateName(e.target.value)}/>
+                    <input placeholder='recipe name' value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
                     Category 
-                    <select onChange={e => this.updateCategory(e.target.value)}>
-                        <option>select</option>
+                    <select value={this.state.category} onChange={e => this.updateCategory(e.target.value)}>
+                        <option value="0">select</option>
                         <option value='1'>appetizers</option>
                         <option value='2'>beverages</option>
                         <option value='3'>breads</option>
@@ -85,11 +89,11 @@ class NewRecipe extends Component {
                         <option value='9'>soups/salads</option>
                     </select>
                     Ingredients 
-                    <input placeholder='recipe ingredients' onChange={e => this.updateIngredients(e.target.value)}/>
+                    <input placeholder='recipe ingredients' value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
                     Directions 
-                    <input placeholder='recipe directions' onChange={e => this.updateDirections(e.target.value)}/>
+                    <input placeholder='recipe directions' value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
                     Notes 
-                    <input placeholder='notes' onChange={e => this.updateNotes(e.target.value)}/>
+                    <input placeholder='notes' value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                     <button onClick={() => this.handleSubmit()}>Save Recipe</button>
                 </div>
             </div>

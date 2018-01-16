@@ -1,15 +1,16 @@
 module.exports = {
     newRecipe: (req, res, next) => {
         const db =  req.app.get('db')
-        const {name, category, ingredients, direction, notes} = req.body 
-
-        db.new_recipe([name, category, ingredients, direction, notes]).then(() => {
+        const {name, category, ingredients, directions, notes} = req.body 
+        console.log(req.body)
+        db.new_recipe([name, category, ingredients, directions, notes]).then(() => {
             res.status(200).send('success')
-        }).catch(res.status(500).send('something went wrong'))
+        }).catch(error => console.log(error))
     }, 
     getAll: (req, res, next) => {
         const db =  req.app.get('db')
-        
+
+        db.read_all_recipes([req.session.user])
     }, 
     getCategory: (req, res, next) => {
         const db =  req.app.get('db')

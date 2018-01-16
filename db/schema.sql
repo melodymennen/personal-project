@@ -1,9 +1,9 @@
 CREATE TABLE users (
 id SERIAL PRIMARY KEY, 
-auth0_id TEXT,
 name TEXT, 
 email TEXT, 
-picture_url TEXT
+picture_url TEXT,
+auth0_id TEXT
 );
 
 CREATE TABLE categories (
@@ -17,7 +17,8 @@ name VARCHAR(100),
 category_id INTEGER references categories(id),
 ingredients TEXT, 
 directions TEXT,
-notes TEXT
+notes TEXT, 
+user_id INTEGER references users(id)
 );
 
 CREATE TABLE favorites (
