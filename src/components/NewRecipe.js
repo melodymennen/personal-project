@@ -51,7 +51,7 @@ class NewRecipe extends Component {
             notes: this.state.notes
         }
 
-        if(this.state.category == 0){
+        if(this.state.category === 0){
             alert('please select a category')
         } else {
             axios.post('/api/recipes', body).then(() => {

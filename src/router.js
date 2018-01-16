@@ -10,7 +10,7 @@ import Home from './components/Home';
 export default (
     <HashRouter>
         <div>
-            <Route exact path = '/' component={Login} />
+            <Route exact path = '/(access_token.*)?' component={Login} />
             <Route path = '/home' component={Home} />
             <Route path = '/new-recipe' component={NewRecipe} />
             <Route path = '/all' component={AllRecipes} />
