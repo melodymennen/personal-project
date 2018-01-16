@@ -12,7 +12,7 @@ class NewRecipe extends Component {
             ingredients: '',
             directions: '',
             notes: '',
-            // user_id: null
+            // userId: null
         }
 
         this.updateName = this.updateName.bind(this)
@@ -61,7 +61,8 @@ class NewRecipe extends Component {
                     category: 0, 
                     ingredients: '',
                     directions: '',
-                    notes: ''
+                    notes: '', 
+                    // userId: null
                 })
             })
         }
