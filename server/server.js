@@ -49,12 +49,12 @@ app.get('/user-data', (req, res) => {
 })
 
 app.post('/api/recipes', controller.newRecipe)
-// app.post('/api/favorites', controller.addFavorite)
-// app.get('/api/recipes', controller.getAll)
+app.get('/api/recipes', controller.getAll)
 // app.get('/api/recipes/:category_id', controller.getCategory)
-// app.get('/api/favorites/:user_id', controller.getFavorites)
 // app.delete('/api/recipes/:recipe_id', controller.delete)
 // app.put('/api/recipes/:recipe_id', controller.update)
+// app.post('/api/favorites', controller.addFavorite)
+// app.get('/api/favorites/:user_id', controller.getFavorites)
 
 const port = process.env.SERVER_PORT
 app.listen(port, () => console.log(`listening on port ${port}`));

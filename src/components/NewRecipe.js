@@ -11,7 +11,8 @@ class NewRecipe extends Component {
             category: 0, 
             ingredients: '',
             directions: '',
-            notes: ''
+            notes: '',
+            // user_id: null
         }
 
         this.updateName = this.updateName.bind(this)
