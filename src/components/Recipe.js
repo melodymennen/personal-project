@@ -34,7 +34,7 @@ class Recipe extends Component {
         }
 
         axios.post('/api/favorites', body).then(response => {
-
+            console.log('recipe added to favorites')
         })
     }
 

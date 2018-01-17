@@ -50,7 +50,11 @@ module.exports = {
     }, 
     getFavorites: (req, res, next) => {
         const db =  req.app.get('db')
-        
+        const { user } = req.session
+
+        db.get_favorites([user.id]).then(favorites => {
+            res.status(200).json(favorites)
+        }).catch(error => console.log('get favorites error',error))
     }, 
     addFavorite: (req, res, next) => {
         const db =  req.app.get('db')

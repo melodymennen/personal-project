@@ -56,7 +56,7 @@ app.get('/api/categories/:category_id', controller.recipesByCategory)
 // app.delete('/api/recipes/:recipe_id', controller.delete)
 // app.put('/api/recipes/:recipe_id', controller.update)
 app.post('/api/favorites', controller.addFavorite)
-// app.get('/api/favorites/:user_id', controller.getFavorites)
+app.get('/api/favorites/:user_id', controller.getFavorites)
 
 const port = process.env.SERVER_PORT
 app.listen(port, () => console.log(`listening on port ${port}`));
