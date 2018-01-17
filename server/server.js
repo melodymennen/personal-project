@@ -55,7 +55,7 @@ app.get('/api/categories', controller.getCategories)
 app.get('/api/categories/:category_id', controller.recipesByCategory)
 // app.delete('/api/recipes/:recipe_id', controller.delete)
 // app.put('/api/recipes/:recipe_id', controller.update)
-// app.post('/api/favorites', controller.addFavorite)
+app.post('/api/favorites', controller.addFavorite)
 // app.get('/api/favorites/:user_id', controller.getFavorites)
 
 const port = process.env.SERVER_PORT

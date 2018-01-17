@@ -34,10 +34,8 @@ module.exports = {
     }, 
     oneRecipe: (req, res, next) => {
         const db =  req.app.get('db')
-        console.log('hello')
         const { recipe_id } = req.params
         
-        console.log(recipe_id)
         db.get_recipe([recipe_id]).then(recipe => {
             res.status(200).json(recipe)
         }).catch(error => console.log('get recipe error',error))
@@ -56,6 +54,11 @@ module.exports = {
     }, 
     addFavorite: (req, res, next) => {
         const db =  req.app.get('db')
+        const { user } = req.session
+        const { recipe } = req.body
         
+        db.add_favorite([user.id, recipe.id]).then(() => {
+            res.status(200).send('success')
+        }).catch(error => console.log('add favorite error',error))
     }
 }

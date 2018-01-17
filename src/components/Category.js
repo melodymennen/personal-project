@@ -28,7 +28,6 @@ class Category extends Component {
     }
 
     render () {
-        console.log(this.state)
         const category = this.state.category.map(item => {
             return (
                 <div>
