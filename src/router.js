@@ -13,15 +13,15 @@ import Home from './components/Home';
 export default (
     <HashRouter>
         <div>
-            <Route exact path = '/(access_token.*)?' component={Login} />
-            <Route path = '/home' component={Home} />
-            <Route path = '/new-recipe' component={NewRecipe} />
-            <Route path = '/all-recipes' component={AllRecipes} />
-            <Route path = '/recipes/:recipe_id' component={Recipe} />
-            <Route path = '/all-categories' component={CategorySelect} />
-            <Route path = '/categories/:category_id' component={Category} />
-            <Route path = '/favorites' component={Favorites} />
-            <Route path = '/edit-recipe/:recipe_id' component={EditRecipe} />
+            <Route exact path = "/(access_token.*)?" component={Login} />
+            <Route path = "/home" component={Home} />
+            <Route path = "/new-recipe" component={NewRecipe} />
+            <Route path = "/all-recipes" component={AllRecipes} />
+            <Route path = "/recipes/:recipe_id" component={Recipe} />
+            <Route path = "/all-categories" component={CategorySelect} />
+            <Route path = "/categories/:category_id" component={Category} />
+            <Route path = "/favorites" component={Favorites} />
+            <Route path = "/edit-recipe/:recipe_id" component={EditRecipe} />
         </div>
     </HashRouter>
 )

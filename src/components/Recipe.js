@@ -48,7 +48,7 @@ class Recipe extends Component {
     render() {
         const recipe = this.state.recipe.map(item => {
             return (
-                <div>
+                <div key={item.id}>
                     <h1>{item.name}</h1>
                     <button onClick={this.addToFavorites}>Add to Favorites</button>
                     <Link to={`/edit-recipe/${this.state.recipe[0].id}`}>Edit Recipe</Link>

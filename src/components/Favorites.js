@@ -30,7 +30,7 @@ class Favorites extends Component {
     render () {
         const favorites = this.state.favorites.map(item => {
             return (
-                <div>
+                <div key={item.id}>
                     <Link to={`/recipes/${item.recipe_id}`}><div>{item.name}</div></Link>
                 </div>
             )

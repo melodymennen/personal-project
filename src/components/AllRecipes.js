@@ -30,7 +30,7 @@ class AllRecipes extends Component {
     render () {
         const recipes = this.state.recipes.map((item) => {
             return (
-                <div>
+                <div key={item.id}>
                     <Link to={`/recipes/${item.id}`}><div>{item.name}</div></Link>
                 </div>
             )

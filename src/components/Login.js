@@ -42,7 +42,7 @@ class Login extends Component {
             <div>
                 <div>Site Name/Logo</div>
                 <div><button onClick={this.login}>Login/Register</button></div>
-                {/* <Link to='/home'>I dont want to log in.</Link> */}
+                {/* <Link to="/home">I dont want to log in.</Link> */}
             </div>
         )
     }

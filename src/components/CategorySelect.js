@@ -31,7 +31,7 @@ class CategorySelect extends Component {
     render () {
         const categories = this.state.categories.map(item => {
             return (
-                <div>
+                <div key={item.id}>
                     <Link to={`/categories/${item.id}`}><div>{item.category}</div></Link>
                 </div>
             )

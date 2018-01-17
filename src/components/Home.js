@@ -22,7 +22,7 @@ class Home extends Component {
             <div>
                 {!this.props.user && 
                     <div>
-                        uh oh.. you must <Link to='/'>Log in</Link>
+                        uh oh.. you must <Link to="/">Log in</Link>
                     </div>
                 }
                 {this.props.user && 
@@ -32,8 +32,8 @@ class Home extends Component {
                         </div>
                         <div>
                             Home <br />
-                            <Link to='/all-recipes'>view all recipes </Link>
-                            <Link to='/all-categories'>view recipes by category </Link>
+                            <Link to="/all-recipes">view all recipes </Link>
+                            <Link to="/all-categories">view recipes by category </Link>
                         </div>
                     </div>
                 }
