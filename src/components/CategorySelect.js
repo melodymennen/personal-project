@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
+import { login } from '../ducks/reducer';
+import { connect } from 'react-redux';
 import Header from './Header';
+import axios from 'axios';
 
 class CategorySelect extends Component {
+
+    componentDidMount() {
+        axios.get('/user-data').then(response => {
+            if(response.data){
+                this.props.login(response.data)
+            } else {
+                this.props.history.push('/')
+            }
+        })
+    }
 
     render () {
         return (
@@ -17,4 +30,4 @@ class CategorySelect extends Component {
     }
 }
 
-export default CategorySelect;
+export default connect(null, {login})(CategorySelect);

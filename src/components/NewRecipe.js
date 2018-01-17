@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { login } from '../ducks/reducer';
+import { connect } from 'react-redux';
 import Header from './Header';
 import axios from 'axios';
 
@@ -11,8 +13,7 @@ class NewRecipe extends Component {
             category: 0, 
             ingredients: '',
             directions: '',
-            notes: '',
-            // userId: null
+            notes: ''
         }
 
         this.updateName = this.updateName.bind(this)
@@ -21,6 +22,16 @@ class NewRecipe extends Component {
         this.updateDirections = this.updateDirections.bind(this)
         this.updateNotes = this.updateNotes.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidMount() {
+        axios.get('/user-data').then(response => {
+            if(response.data){
+                this.props.login(response.data)
+            } else {
+                this.props.history.push('/')
+            }
+        })
     }
 
     updateName(value){
@@ -49,7 +60,7 @@ class NewRecipe extends Component {
             category: this.state.category,
             ingredients: this.state.ingredients, 
             directions: this.state.directions,
-            notes: this.state.notes
+            notes: this.state.notes,
         }
 
         if(this.state.category === 0){
@@ -61,8 +72,7 @@ class NewRecipe extends Component {
                     category: 0, 
                     ingredients: '',
                     directions: '',
-                    notes: '', 
-                    // userId: null
+                    notes: '' 
                 })
             })
         }
@@ -103,5 +113,11 @@ class NewRecipe extends Component {
     }
 }
 
+function mapStateToProps(state){
+    const { user } = state
+    return {
+        user
+    }
+}
 
-export default NewRecipe;
+export default connect(mapStateToProps, {login})(NewRecipe);

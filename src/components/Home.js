@@ -10,7 +10,6 @@ class Home extends Component {
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){
-                console.log(response.data)
                 this.props.login(response.data)
             } else {
                 this.props.history.push('/')
@@ -21,18 +20,33 @@ class Home extends Component {
     render () {
         return (
             <div>
-                <div>
-                    <Header />
-                </div>
-                <div>
-                    Home <br />
-                    <Link to='/all'>view all recipes </Link>
-                    <Link to='/categories'>view recipes by category </Link>
-                </div>
+                {!this.props.user && 
+                    <div>
+                        uh oh.. you must <Link to='/'>Log in</Link>
+                    </div>
+                }
+                {this.props.user && 
+                    <div>
+                        <div>
+                            <Header />
+                        </div>
+                        <div>
+                            Home <br />
+                            <Link to='/all'>view all recipes </Link>
+                            <Link to='/categories'>view recipes by category </Link>
+                        </div>
+                    </div>
+                }
             </div>
         )
     }
 }
 
+function mapStateToProps(state){
+    const { user } = state
+    return {
+        user
+    }
+}
 
-export default connect(null, {login})(Home);
+export default connect(mapStateToProps, {login})(Home);
