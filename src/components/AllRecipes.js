@@ -29,7 +29,6 @@ class AllRecipes extends Component {
 
     render () {
         const recipes = this.state.recipes.map((item) => {
-            console.log(item.id)
             return (
                 <div>
                     <Link to={`/recipes/${item.id}`}><div>{item.name}</div></Link>

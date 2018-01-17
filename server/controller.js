@@ -28,8 +28,8 @@ module.exports = {
         const { user } = req.session
         const { category_id } = req.params
 
-        db.recipes_by_category([user.id, category_id]).then(categories => {
-            res.status(200).json(categories)
+        db.recipes_by_category([user.id, category_id]).then(category => {
+            res.status(200).json(category)
         }).catch(error => console.log('recipes by category error',error))
     }, 
     oneRecipe: (req, res, next) => {

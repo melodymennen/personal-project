@@ -15,11 +15,11 @@ export default (
             <Route exact path = '/(access_token.*)?' component={Login} />
             <Route path = '/home' component={Home} />
             <Route path = '/new-recipe' component={NewRecipe} />
-            <Route path = '/all' component={AllRecipes} />
-            <Route path = '/categories' component={CategorySelect} />
-            <Route path = '/favorites' component={Favorites} />
+            <Route path = '/all-recipes' component={AllRecipes} />
             <Route path = '/recipes/:recipe_id' component={Recipe} />
+            <Route path = '/all-categories' component={CategorySelect} />
             <Route path = '/categories/:category_id' component={Category} />
+            <Route path = '/favorites' component={Favorites} />
         </div>
     </HashRouter>
 )
