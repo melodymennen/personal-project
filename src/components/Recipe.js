@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Header from './Header';
 import axios from 'axios';
 
-class CategorySelect extends Component {
+class Recipe extends Component {
     constructor(){
         super()
 
         this.state = {
-            categories: []
+            recipe: []
         }
-
     }
 
     componentDidMount() {
@@ -23,16 +21,19 @@ class CategorySelect extends Component {
                 this.props.history.push('/')
             }
         })
-        axios.get('/api/categories').then(response => {
-            this.setState({categories: response.data})
-        })
+        axios.get(`/api/recipes/${this.props.match.params.recipe_id}`).then(response => {
+               this.setState({recipe: response.data})
+            })
     }
 
-    render () {
-        const categories = this.state.categories.map(item => {
+    render() {
+        const recipe = this.state.recipe.map(item => {
             return (
                 <div>
-                    <Link to={`/categories/${item.id}`}><div>{item.category}</div></Link>
+                    <h1>{item.name}</h1>
+                    <p>{item.ingredients}</p>
+                    <p>{item.directions}</p>
+                    <p>{item.notes}</p>
                 </div>
             )
         })
@@ -43,12 +44,12 @@ class CategorySelect extends Component {
                     <Header />
                 </div>
                 <div>
-                    categories
-                    {categories}
+                    Recipe
+                    {recipe}
                 </div>
             </div>
         )
     }
 }
 
-export default connect(null, {login})(CategorySelect);
+export default connect(null, {login})(Recipe);

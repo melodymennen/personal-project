@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import axios from 'axios';
 
@@ -28,9 +29,10 @@ class AllRecipes extends Component {
 
     render () {
         const recipes = this.state.recipes.map((item) => {
+            console.log(item.id)
             return (
                 <div>
-                    <div>{item.name}</div>
+                    <Link to={`/recipes/${item.id}`}><div>{item.name}</div></Link>
                 </div>
             )
         })

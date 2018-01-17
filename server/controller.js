@@ -12,13 +12,35 @@ module.exports = {
         const db =  req.app.get('db')
         const { user } = req.session
 
-        db.read_all_recipes([user.id]).then(recipe => {
-            res.status(200).json(recipe)
+        db.read_all_recipes([user.id]).then(recipes => {
+            res.status(200).json(recipes)
         }).catch(error => console.log('read all recipes error',error))
     }, 
-    getCategory: (req, res, next) => {
+    getCategories: (req, res, next) => {
         const db =  req.app.get('db')
+
+        db.get_categories().then(categories => {
+            res.status(200).json(categories)
+        }).catch(error => console.log('read all recipes error',error))
+    }, 
+    recipesByCategory: (req, res, next) => {
+        const db =  req.app.get('db')
+        const { user } = req.session
+        const { category_id } = req.params
+
+        db.recipes_by_category([user.id, category_id]).then(categories => {
+            res.status(200).json(categories)
+        }).catch(error => console.log('recipes by category error',error))
+    }, 
+    oneRecipe: (req, res, next) => {
+        const db =  req.app.get('db')
+        console.log('hello')
+        const { recipe_id } = req.params
         
+        console.log(recipe_id)
+        db.get_recipe([recipe_id]).then(recipe => {
+            res.status(200).json(recipe)
+        }).catch(error => console.log('get recipe error',error))
     }, 
     update: (req, res, next) => {
         const db =  req.app.get('db')

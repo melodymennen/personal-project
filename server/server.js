@@ -50,7 +50,9 @@ app.get('/user-data', (req, res) => {
 
 app.post('/api/recipes', controller.newRecipe)
 app.get('/api/recipes', controller.getAll)
-// app.get('/api/recipes/:category_id', controller.getCategory)
+app.get('/api/categories', controller.getCategories)
+app.get('/api/categories/:category_id', controller.recipesByCategory)
+app.get('/api/recipes/:recipe_id', controller.oneRecipe)
 // app.delete('/api/recipes/:recipe_id', controller.delete)
 // app.put('/api/recipes/:recipe_id', controller.update)
 // app.post('/api/favorites', controller.addFavorite)
