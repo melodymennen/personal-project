@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import axios from 'axios';
 
-class NewRecipe extends Component {
+class EditRecipe extends Component {
     constructor(){
         super()
 
         this.state = {
+            id: 0,
             name: '',
             category: 0, 
             ingredients: '',
@@ -31,6 +32,16 @@ class NewRecipe extends Component {
             } else {
                 this.props.history.push('/')
             }
+        })
+        axios.get(`/api/recipes/${this.props.match.params.recipe_id}`).then(response => {
+            this.setState({
+                id: response.data[0].id,
+                name: response.data[0].name,
+                category: response.data[0].category_id,
+                ingredients: response.data[0].ingredients,
+                directions: response.data[0].directions,
+                notes: response.data[0].notes
+            })
         })
     }
 
@@ -56,6 +67,7 @@ class NewRecipe extends Component {
 
     handleSubmit(){
         const body = {
+            id: this.state.id,
             name: this.state.name,
             category: this.state.category,
             ingredients: this.state.ingredients, 
@@ -63,20 +75,10 @@ class NewRecipe extends Component {
             notes: this.state.notes
         }
 
-        if(this.state.category === 0){
-            alert('please select a category')
-        } else {
-            axios.post('/api/recipes', body).then(() => {
-                this.setState({
-                    name: '',
-                    category: 0, 
-                    ingredients: '',
-                    directions: '',
-                    notes: '' 
-                })
+            axios.put(`/api/recipes/${this.props.match.params.recipe_id}`, body).then(() => {
+                this.props.history.push(`/recipes/${this.state.id}`)            
             })
         }
-    }
 
     render () {
         return (
@@ -86,7 +88,7 @@ class NewRecipe extends Component {
                 </div>
                 <div>
                     Recipe Name 
-                    <input placeholder='recipe name' value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
+                    <input value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
                     Category 
                     <select value={this.state.category} onChange={e => this.updateCategory(e.target.value)}>
                         <option value="0">select</option>
@@ -101,11 +103,11 @@ class NewRecipe extends Component {
                         <option value='9'>soups/salads</option>
                     </select>
                     Ingredients 
-                    <input placeholder='recipe ingredients' value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
+                    <input value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
                     Directions 
-                    <input placeholder='recipe directions' value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
+                    <input value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
                     Notes 
-                    <input placeholder='notes' value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
+                    <input value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                     <button onClick={() => this.handleSubmit()}>Save Recipe</button>
                 </div>
             </div>
@@ -120,4 +122,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {login})(NewRecipe);
+export default connect(mapStateToProps, {login})(EditRecipe);

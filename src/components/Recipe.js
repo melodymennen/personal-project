@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import { login } from '../ducks/reducer';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -42,7 +43,9 @@ class Recipe extends Component {
         const recipe = this.state.recipe.map(item => {
             return (
                 <div>
-                    <h1>{item.name}</h1><button onClick={this.addToFavorites}>Add to favorites</button>
+                    <h1>{item.name}</h1>
+                    <button onClick={this.addToFavorites}>Add to Favorites</button>
+                    <Link to={`/edit-recipe/${this.state.recipe[0].id}`}>Edit Recipe</Link>
                     <p>{item.ingredients}</p>
                     <p>{item.directions}</p>
                     <p>{item.notes}</p>

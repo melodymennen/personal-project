@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 import CategorySelect from './components/CategorySelect';
+import EditRecipe from './components/EditRecipe';
 import AllRecipes from './components/AllRecipes';
 import NewRecipe from './components/NewRecipe';
 import Favorites from './components/Favorites';
-import Category from './components/Category'
+import Category from './components/Category';
 import Recipe from './components/Recipe';
 import Login from './components/Login';
 import Home from './components/Home';
@@ -20,6 +21,7 @@ export default (
             <Route path = '/all-categories' component={CategorySelect} />
             <Route path = '/categories/:category_id' component={Category} />
             <Route path = '/favorites' component={Favorites} />
+            <Route path = '/edit-recipe/:recipe_id' component={EditRecipe} />
         </div>
     </HashRouter>
 )

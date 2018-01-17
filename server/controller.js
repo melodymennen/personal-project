@@ -1,7 +1,7 @@
 module.exports = {
     newRecipe: (req, res, next) => {
         const db =  req.app.get('db')
-        const {name, category, ingredients, directions, notes} = req.body 
+        const { name, category, ingredients, directions, notes } = req.body 
         const { user } = req.session
 
         db.new_recipe([name, category, ingredients, directions, notes, user.id]).then(() => {
@@ -42,7 +42,11 @@ module.exports = {
     }, 
     update: (req, res, next) => {
         const db =  req.app.get('db')
+        const { id, name, category, ingredients, directions, notes } = req.body
         
+        db.update_recipe([id, name, category, ingredients, directions, notes]).then(() => {
+            res.status(200).send('success')
+        }).catch(error => console.log('update recipe error',error))
     }, 
     delete: (req, res, next) => {
         const db =  req.app.get('db')
