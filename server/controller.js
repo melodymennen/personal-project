@@ -50,7 +50,11 @@ module.exports = {
     }, 
     delete: (req, res, next) => {
         const db =  req.app.get('db')
+        const { recipe_id } = req.params
         
+        db.delete_recipe([recipe_id]).then(() => {
+            res.status(200).send('success')
+        }).catch(error => console.log('delete recipe error',error))
     }, 
     getFavorites: (req, res, next) => {
         const db =  req.app.get('db')

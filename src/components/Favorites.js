@@ -28,7 +28,6 @@ class Favorites extends Component {
     }
 
     render () {
-        console.log(this.state)
         const favorites = this.state.favorites.map(item => {
             return (
                 <div>

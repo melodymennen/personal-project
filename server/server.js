@@ -54,7 +54,7 @@ app.get('/api/recipes/:recipe_id', controller.oneRecipe)
 app.get('/api/categories', controller.getCategories)
 app.get('/api/categories/:category_id', controller.recipesByCategory)
 app.put('/api/recipes/:recipe_id', controller.update)
-// app.delete('/api/recipes/:recipe_id', controller.delete)
+app.delete('/api/recipes/:recipe_id', controller.delete)
 app.post('/api/favorites', controller.addFavorite)
 app.get('/api/favorites/:user_id', controller.getFavorites)
 
