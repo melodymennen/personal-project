@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MdEdit from 'react-icons/lib/md/edit';
 import Header from '../components/Header';
 import { login } from '../ducks/reducer';
 import { Link } from 'react-router-dom';
@@ -51,7 +52,7 @@ class Recipe extends Component {
                 <div key={item.id}>
                     <h1>{item.name}</h1>
                     <button onClick={this.addToFavorites}>Add to Favorites</button>
-                    <Link to={`/edit-recipe/${this.state.recipe[0].id}`}>Edit Recipe</Link>
+                    <Link to={`/edit-recipe/${this.state.recipe[0].id}`}><MdEdit/></Link>
                     <button onClick={() => this.deleteRecipe(this.state.recipe[0].id)}>Delete Recipe</button>
                     <p>{item.ingredients}</p>
                     <p>{item.directions}</p>
@@ -66,7 +67,7 @@ class Recipe extends Component {
                     <Header />
                 </div>
                 <div>
-                    Recipe
+                    {/* <Link to="all-recipes">back to all recipes</Link> */}
                     {recipe}
                 </div>
             </div>

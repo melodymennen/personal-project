@@ -40,9 +40,13 @@ class Login extends Component {
 
         return (
             <div>
-                <div>Site Name/Logo</div>
-                <div><button onClick={this.login}>Login/Register</button></div>
-                {/* <Link to="/home">I dont want to log in.</Link> */}
+                <div className="splash">
+                    <div className="logo">Site Name/Logo</div>
+                    <div className="login button">
+                        <button onClick={this.login}>Login/Register</button>
+                    </div>
+                    {/* <Link to="/home">I dont want to log in.</Link> */}
+                </div>
             </div>
         )
     }

@@ -24,5 +24,5 @@ user_id INTEGER references users(id)
 CREATE TABLE favorites (
 id SERIAL PRIMARY KEY, 
 user_id INTEGER references users(id),
-recipe_id INTEGER references recipes(id)
+recipe_id INTEGER references recipes(id) ON DELETE CASCADE
 );

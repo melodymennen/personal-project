@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header>
-            <div><Link to="/home">site name</Link></div>
-            <div><Link to="/new-recipe">new recipe</Link></div>
-            <div><Link to="/favorites">favorites</Link></div>
+        <header className="header" >
+            <div className="header-content"><Link to="/home">site name</Link></div>
+            <div className="menu-items header-content">
+                <div><Link to="/new-recipe">NEW RECIPE</Link></div>
+                <div><Link to="/favorites">FAVORITES</Link></div>
+            </div>
         </header>
     )
 }
+
+// const styles = {
+    
+// }
 
 export default Header;

@@ -21,19 +21,18 @@ class Home extends Component {
         return (
             <div>
                 {!this.props.user && 
-                    <div>
+                    <div className="uh-oh">
                         uh oh.. you must <Link to="/">Log in</Link>
                     </div>
                 }
                 {this.props.user && 
-                    <div>
+                    <div className="home">
                         <div>
                             <Header />
                         </div>
-                        <div>
-                            Home <br />
-                            <Link to="/all-recipes">view all recipes </Link>
-                            <Link to="/all-categories">view recipes by category </Link>
+                        <div className="tile-wrapper">
+                            <div className="tile"><Link to="/all-recipes">view all recipes </Link></div>
+                            <div className="tile"><Link to="/all-categories">view recipes by category </Link></div>
                         </div>
                     </div>
                 }
