@@ -95,12 +95,15 @@ a {
 
 // Home
 .uh-oh {
-	height: 100px;
-	width: 200px;
+	padding: 70px;
 	margin: auto;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+    justify-content: center;
+    font-size: 1.25em;
+    a:link {
+        text-decoration: underline;
+    }
 }
 
 .tile-wrapper {
@@ -113,9 +116,9 @@ a {
 
 .tile {
     margin: 10px;
-	padding: 20px;
-	height: 100px;
-    width: 200px;
+    padding: 20px 100px;
+    line-height: 100px;
+	font-size: 1.25em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,4 +127,34 @@ a {
 	background-color: $tile_background;
 }
 
-// AllRecipes
+// Recipe
+.icon-wrapper {
+    display: flex;
+}
+
+// NewRecipe & EditRecipe
+.input-wrapper {
+    // display: flex;
+    // flex-wrap: wrap;
+}
+
+.input {
+    padding: 5px;
+    margin: 5px; 
+    border-radius: $border_radius;
+}
+
+.name {
+    width: 200px;
+}
+
+.category {
+    width: 150px;
+    font-size: $main_font_size;
+}
+
+.big-input {
+    width: 300px;
+    height: 150px;
+    resize: none;
+}

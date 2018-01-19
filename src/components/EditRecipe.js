@@ -75,10 +75,10 @@ class EditRecipe extends Component {
             notes: this.state.notes
         }
 
-            axios.put(`/api/recipes/${this.props.match.params.recipe_id}`, body).then(() => {
-                this.props.history.push(`/recipes/${this.state.id}`)            
-            })
-        }
+        axios.put(`/api/recipes/${this.props.match.params.recipe_id}`, body).then(() => {
+            this.props.history.push(`/recipes/${this.state.id}`)            
+        })
+    }
 
     render () {
         return (
@@ -86,11 +86,11 @@ class EditRecipe extends Component {
                 <div>
                     <Header />
                 </div>
-                <div>
+                <div className="input-wrapper">
                     Recipe Name 
-                    <input value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
+                    <input placeholder='recipe name' className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
                     Category 
-                    <select value={this.state.category} onChange={e => this.updateCategory(e.target.value)}>
+                    <select value={this.state.category} className="category dropdown" onChange={e => this.updateCategory(e.target.value)}>
                         <option value="0">select</option>
                         <option value='1'>appetizers</option>
                         <option value='2'>beverages</option>
@@ -103,12 +103,12 @@ class EditRecipe extends Component {
                         <option value='9'>soups/salads</option>
                     </select>
                     Ingredients 
-                    <input value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
+                    <textarea placeholder='recipe ingredients' className="ingredients input big-input" value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
                     Directions 
-                    <input value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
+                    <textarea placeholder='recipe directions' className="directions input big-input" value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
                     Notes 
-                    <input value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
-                    <button onClick={() => this.handleSubmit()}>Save Recipe</button>
+                    <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
+                    <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                 </div>
             </div>
         )
