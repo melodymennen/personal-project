@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import background from '../images/pexels-photo-459469.jpeg';
 import { connect } from 'react-redux';
 import { login } from '../ducks/reducer';
 import Auth0Lock from 'auth0-lock';
