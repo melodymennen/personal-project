@@ -31,7 +31,7 @@ class Category extends Component {
         const category = this.state.category.map(item => {
             return (
                 <div key={item.id}>
-                    <Link to={`/recipes/${item.id}`}><div>{item.name}</div></Link>
+                    <Link to={`/recipes/${item.id}`}><div className="tile">{item.name}</div></Link>
                 </div>
             )
         })
@@ -40,7 +40,7 @@ class Category extends Component {
                 <div>
                     <Header />
                 </div>
-                <div>
+                <div className="tile-wrapper">
                     Category
                     {category}
                 </div>

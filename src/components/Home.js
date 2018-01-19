@@ -31,8 +31,8 @@ class Home extends Component {
                             <Header />
                         </div>
                         <div className="tile-wrapper">
-                            <div className="tile"><Link to="/all-recipes">view all recipes </Link></div>
-                            <div className="tile"><Link to="/all-categories">view recipes by category </Link></div>
+                            <Link to="/all-recipes"><div className="tile">view all recipes</div> </Link>
+                            <Link to="/all-categories"><div className="tile">view recipes by category</div> </Link>
                         </div>
                     </div>
                 }

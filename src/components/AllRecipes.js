@@ -31,7 +31,7 @@ class AllRecipes extends Component {
         const recipes = this.state.recipes.map((item) => {
             return (
                 <div key={item.id}>
-                    <Link to={`/recipes/${item.id}`}><div>{item.name}</div></Link>
+                    <Link to={`/recipes/${item.id}`}><div className="tile">{item.name}</div></Link>
                 </div>
             )
         })
@@ -41,8 +41,7 @@ class AllRecipes extends Component {
                 <div>
                     <Header />
                 </div>
-                <div>
-                    AllRecipes
+                <div className="tile-wrapper">
                     {recipes}
                 </div>
             </div>

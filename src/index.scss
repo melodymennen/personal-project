@@ -1,27 +1,38 @@
 @import "https://fonts.googleapis.com/css?family=Poppins";
 
-$text_color: white;
+$login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-357743.jpeg';
 $font_family_1: 'Poppins', sans-serif;
 $transparent_background: rgba(255, 255, 255, 0.2);
-$background_color_2: #9aaeaf;
+$text_color: white;
+$white-color: #EFEDEF;
+$black-color: #222022;
+$background_color: #2c3e50;
+$tile_background: #9aaeaf;
+$main_font_size: 15px;
+$logo_font-size: 2em;
+$border_radius: 5px;
 
 * {
 	box-sizing: border-box;
 }
 
 body {
-	margin: 0;
+    margin: 0;
 	padding: 0;
 	font-family: $font_family_1;
-	font-size: 15px;
+	font-size: $main_font_size;
+    background-color: $background_color;
+    color: $white-color;
 }
 
 a {
 	&:link {
-		text-decoration: none;
+        text-decoration: none;
+        color: $white-color;
 	}
 	&:visited {
-		text-decoration: none;
+        text-decoration: none;
+        color: $white-color;
 	}
 }
 
@@ -33,7 +44,7 @@ a {
 }
 
 .header-content {
-	line-height: 50px;
+	line-height: 70px;
 	display: flex;
 	margin: 0 10px;
 	div {
@@ -43,18 +54,20 @@ a {
 
 // Login
 .body {
-	height: 100vh;
-	background-image: url('./images/pexels-photo-459469.jpeg');
+    height: 100vh;
+	background-image: url($login_background);
 	background-repeat: no-repeat;
-	background-size: cover;
+    background-size: cover;
+    background-position: top;
 	display: flex;
 	align-items: center;
 }
 
 .splash {
-	width: 300px;
-	height: 200px;
-	border-radius: 25px;
+	// width: 300px;
+    // height: 200px;
+    padding: 20px;
+	border-radius: $border_radius;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -63,11 +76,21 @@ a {
 }
 
 .logo {
-	margin: auto;
+    margin: 20px 10px;
+    font-size: $logo_font-size;
 }
 
 .login {
-	margin: auto;
+    margin: auto;
+    button {
+        color: $white-color;
+        background-color: $black-color;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        border-radius: $border_radius;
+        text-decoration: none;
+    }
 }
 
 // Home
@@ -83,14 +106,22 @@ a {
 .tile-wrapper {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	margin: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+	margin: 20px;
 }
 
 .tile {
-	margin: 10px;
+    margin: 10px;
 	padding: 20px;
 	height: 100px;
-	width: 200px;
-	background-color: $background_color_2;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: $border_radius;
+	background-color: $tile_background;
 }
+
+// AllRecipes
