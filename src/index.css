@@ -38,12 +38,24 @@ a:link, a:visited {
 
 /* Login */
 
+.body {
+  height: 100vh;
+  background-image: url('./images/pexels-photo-459469.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
 .splash {
   width: 300px;
   height: 200px;
+  border-radius: 25px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .logo, .login {
@@ -65,6 +77,7 @@ a:link, a:visited {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 10px;
 }
 
 .tile {

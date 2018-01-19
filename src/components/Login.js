@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+import background from '../images/pexels-photo-459469.jpeg';
 import { connect } from 'react-redux';
 import { login } from '../ducks/reducer';
 import Auth0Lock from 'auth0-lock';
@@ -40,17 +41,18 @@ class Login extends Component {
 
         return (
             <div>
-                <div className="splash">
-                    <div className="logo">Site Name/Logo</div>
-                    <div className="login button">
-                        <button onClick={this.login}>Login/Register</button>
+                <div className="body">
+                    <div className="splash">
+                        <div className="logo">Site Name/Logo</div>
+                        <div className="login button">
+                            <button onClick={this.login}>Login/Register</button>
+                        </div>
+                        {/* <Link to="/home">I dont want to log in.</Link> */}
                     </div>
-                    {/* <Link to="/home">I dont want to log in.</Link> */}
                 </div>
             </div>
         )
     }
 }
-
 
 export default connect(null, {login})(Login);
