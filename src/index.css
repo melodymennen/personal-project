@@ -24,11 +24,23 @@ a:visited {
   box-sizing: border-box; }
 
 .header-content {
+  width: 300px;
   line-height: 70px;
   display: flex;
-  margin: 0 10px; }
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 1.25em; }
   .header-content div {
-    margin: 0 0 0 10px; }
+    margin: 0 10px; }
+
+.menu-items {
+  justify-content: flex-end; }
+
+.site-name {
+  font-size: 2em; }
+
+.page-name {
+  justify-content: center; }
 
 .body {
   height: 100vh;
@@ -83,31 +95,65 @@ a:visited {
 .tile {
   margin: 10px;
   padding: 20px 100px;
-  line-height: 100px;
+  height: 100px;
+  width: 350px;
   font-size: 1.25em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 5px;
-  background-color: #9aaeaf; }
+  background-color: rgba(255, 255, 255, 0.2); }
 
 .icon-wrapper {
   display: flex; }
 
+.top, .lower {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .top button, .lower button {
+    width: 400px;
+    background-color: #EFEDEF;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none; }
+
+.lower div {
+  margin: auto;
+  display: flex;
+  flex-direction: column; }
+
+.input-wrapper {
+  display: flex;
+  justify-content: center; }
+
+.left, .right {
+  width: 400px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
 .input {
+  width: 400px;
   padding: 5px;
   margin: 5px;
   border-radius: 5px; }
 
-.name {
-  width: 200px; }
-
 .category {
-  width: 150px;
+  width: 400px;
+  margin: 7px;
   font-size: 15px; }
 
 .big-input {
-  width: 400px;
   height: 200px;
   resize: none; }
+
+.notes {
+  width: 820px; }

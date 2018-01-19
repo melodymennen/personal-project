@@ -84,31 +84,43 @@ class EditRecipe extends Component {
         return (
             <div>
                 <div>
-                    <Header />
+                    <Header page="Edit Recipe"/>
                 </div>
-                <div className="input-wrapper">
-                    Recipe Name 
-                    <input placeholder='recipe name' className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
-                    Category 
-                    <select value={this.state.category} className="category dropdown" onChange={e => this.updateCategory(e.target.value)}>
-                        <option value="0">select</option>
-                        <option value='1'>appetizers</option>
-                        <option value='2'>beverages</option>
-                        <option value='3'>breads</option>
-                        <option value='4'>breakfast</option>
-                        <option value='5'>desserts</option>
-                        <option value='6'>lunch</option>
-                        <option value='7'>main dishes</option>
-                        <option value='8'>side dishes</option>
-                        <option value='9'>soups/salads</option>
-                    </select>
-                    Ingredients 
-                    <textarea placeholder='recipe ingredients' className="ingredients input big-input" value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
-                    Directions 
-                    <textarea placeholder='recipe directions' className="directions input big-input" value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
-                    Notes 
-                    <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
-                    <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
+                <div className="top">
+                    <div className="input-wrapper">
+                        <div className="left">
+                            Recipe Name 
+                            <input placeholder='recipe name' className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
+                            Ingredients 
+                            <textarea placeholder='recipe ingredients' className="ingredients input big-input" value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
+                        </div>
+                        <div className="right">
+                            Category 
+                            <select value={this.state.category} className="category dropdown" onChange={e => this.updateCategory(e.target.value)}>
+                                <option value="0">select</option>
+                                <option value='1'>appetizers</option>
+                                <option value='2'>beverages</option>
+                                <option value='3'>breads</option>
+                                <option value='4'>breakfast</option>
+                                <option value='5'>desserts</option>
+                                <option value='6'>lunch</option>
+                                <option value='7'>main dishes</option>
+                                <option value='8'>side dishes</option>
+                                <option value='9'>soups/salads</option>
+                            </select>
+                            Directions 
+                            <textarea placeholder='recipe directions' className="directions input big-input" value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className="lower">
+                        <div>
+                            Notes 
+                            <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
+                        </div>
+                        <div>
+                            <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

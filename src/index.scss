@@ -44,12 +44,27 @@ a {
 }
 
 .header-content {
+    width: 300px;
 	line-height: 70px;
 	display: flex;
-	margin: 0 10px;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 1.25em;
 	div {
-		margin: 0 0 0 10px;
+        margin: 0 10px;
 	}
+}
+
+.menu-items{
+    justify-content: flex-end;
+}
+
+.site-name {
+    font-size: $logo_font-size;
+}
+
+.page-name {
+    justify-content: center;
 }
 
 // Login
@@ -117,14 +132,15 @@ a {
 .tile {
     margin: 10px;
     padding: 20px 100px;
-    line-height: 100px;
+    height: 100px;
+    width: 350px;
 	font-size: 1.25em;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     border-radius: $border_radius;
-	background-color: $tile_background;
+	background-color: $transparent_background;
 }
 
 // Recipe
@@ -133,28 +149,63 @@ a {
 }
 
 // NewRecipe & EditRecipe
+.top, .lower {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    button {
+        width: 400px;
+        background-color: $white-color;
+        border: none;
+        padding: 10px 15px;
+        margin: 10px;
+        font-size: 18px;
+        border-radius: $border_radius;
+        text-decoration: none;
+    }
+}
+
+.lower {
+    div {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
 .input-wrapper {
-    // display: flex;
-    // flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.left, .right {
+    width: 400px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .input {
+    width: 400px;
     padding: 5px;
     margin: 5px; 
     border-radius: $border_radius;
 }
 
-.name {
-    width: 200px;
-}
-
 .category {
-    width: 150px;
+    width: 400px;
+    margin: 7px;
     font-size: $main_font_size;
 }
 
 .big-input {
-    width: 400px;
     height: 200px;
     resize: none;
 }
+
+.notes {
+    width: 820px;
+}
+
