@@ -41,7 +41,6 @@ class Category extends Component {
                     <Header />
                 </div>
                 <div className="tile-wrapper">
-                    Category
                     {category}
                 </div>
             </div>

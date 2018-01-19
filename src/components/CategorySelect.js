@@ -40,7 +40,7 @@ class CategorySelect extends Component {
         return (
             <div>
                 <div>
-                    <Header />
+                    <Header page="Categories"/>
                 </div>
                 <div className="tile-wrapper">
                     {categories}
