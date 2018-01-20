@@ -52,7 +52,7 @@ class Recipe extends Component {
         const recipe = this.state.recipe.map(item => {
             return (
                 <div key={item.id}>
-                    <h1>{item.name}</h1>
+                    <div className="recipe-name">{item.name}</div>
                     <div className="icon-wrapper">
                         <div className="icons" onClick={this.addToFavorites}><Heart/></div>
                         <Link to={`/edit-recipe/${this.state.recipe[0].id}`} className="icons"><MdEdit/></Link>
@@ -70,7 +70,7 @@ class Recipe extends Component {
                 <div>
                     <Header />
                 </div>
-                <div>
+                <div className="recipe">
                     {/* <Link to="all-recipes">back to all recipes</Link> */}
                     {recipe}
                 </div>

@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Poppins";
+@import "https://fonts.googleapis.com/css?family=Euphoria+Script|Poppins";
 * {
   box-sizing: border-box; }
 
@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   background-color: #2c3e50;
   color: #EFEDEF; }
 
@@ -108,6 +108,16 @@ a:visited {
 .icon-wrapper {
   display: flex; }
 
+.icons {
+  font-size: 1.5em; }
+
+.recipe-name {
+  font-size: 2.5em; }
+
+.recipe {
+  margin: 10px;
+  padding: 0 10px; }
+
 .top, .lower {
   width: 90%;
   margin: auto;
@@ -149,7 +159,7 @@ a:visited {
 .category {
   width: 400px;
   margin: 7px;
-  font-size: 15px; }
+  font-size: 16px; }
 
 .big-input {
   height: 200px;

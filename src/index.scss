@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Poppins";
+@import "https://fonts.googleapis.com/css?family=Euphoria+Script|Poppins";
 
 $login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-357743.jpeg';
 $font_family_1: 'Poppins', sans-serif;
@@ -8,7 +8,7 @@ $white-color: #EFEDEF;
 $black-color: #222022;
 $background_color: #2c3e50;
 $tile_background: #9aaeaf;
-$main_font_size: 15px;
+$main_font_size: 16px;
 $logo_font-size: 2em;
 $border_radius: 5px;
 
@@ -146,6 +146,21 @@ a {
 // Recipe
 .icon-wrapper {
     display: flex;
+}
+
+.icons {
+    font-size: 1.5em;
+}
+
+.recipe-name {
+    // font-family: 'Euphoria Script', $font_family_1;
+    // font-size: 3.25em;
+    font-size: 2.5em;
+}
+
+.recipe {
+    margin: 10px;
+    padding: 0 10px;
 }
 
 // NewRecipe & EditRecipe
