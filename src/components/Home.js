@@ -30,6 +30,9 @@ class Home extends Component {
                         <div>
                             <Header />
                         </div>
+                        <div className="welcome">
+                            Welcome, {this.props.user.name}!
+                        </div>
                         <div className="tile-wrapper">
                             <Link to="/all-recipes"><div className="tile">view all recipes</div> </Link>
                             <Link to="/all-categories"><div className="tile">view recipes by category</div> </Link>
