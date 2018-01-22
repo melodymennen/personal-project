@@ -16,10 +16,13 @@ class Login extends Component {
     componentWillMount() {
         var options = {
             allowAutocomplete: true,
-            // theme: {
-            //     logo: 'https://example.com/logo.png',
-            //     primaryColor: '#31324F'
-            //   }
+            theme: {
+                // logo: '',
+                primaryColor: '#2c3e50'
+              },
+            languageDictionary: {
+                title: 'WTFSIMTE'
+            }
           }
         this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN, options)
         this.lock.on('authenticated', authResult => {

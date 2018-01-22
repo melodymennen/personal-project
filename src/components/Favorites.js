@@ -37,11 +37,13 @@ class Favorites extends Component {
         })
         return (
             <div>
-                <div>
-                    <Header page="Favorites"/>
-                </div>
-                <div className="tile-wrapper">
-                    {favorites}
+                <div className="fav-page">
+                    <div>
+                        <Header page="Favorites"/>
+                    </div>
+                    <div className="tile-wrapper">
+                        {favorites}
+                    </div>
                 </div>
             </div>
         )

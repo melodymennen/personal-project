@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MdEdit from 'react-icons/lib/md/edit';
 import MdDelete from 'react-icons/lib/md/delete';
 import Heart from 'react-icons/lib/ti/heart-full-outline';
+import TiMail from 'react-icons/lib/md/email';
 import Header from '../components/Header';
 import { login } from '../ducks/reducer';
 import { Link } from 'react-router-dom';
@@ -17,6 +18,8 @@ class Recipe extends Component {
         }
 
         this.addToFavorites = this.addToFavorites.bind(this)
+        this.deleteRecipe = this.deleteRecipe.bind(this)
+        // this.sendEmail = this.sendEmail.bind(this)
     }
 
     componentDidMount() {
@@ -48,6 +51,8 @@ class Recipe extends Component {
         })
     }
 
+    // sendEmail(){}
+
     render() {
         const recipe = this.state.recipe.map(item => {
             const array = item.ingredients.split('\n')
@@ -63,6 +68,7 @@ class Recipe extends Component {
                         <div className="icons" onClick={this.addToFavorites}><Heart/></div>
                         <Link to={`/edit-recipe/${this.state.recipe[0].id}`} className="icons"><MdEdit/></Link>
                         <div className="icons"onClick={() => this.deleteRecipe(this.state.recipe[0].id)}><MdDelete/></div>
+                        <div className="mail icons" onClick={this.sendEmail}><TiMail/></div>
                     </div>
                     <ul className="ingredients">{ingredients}</ul>
                     <p>{item.directions}</p>

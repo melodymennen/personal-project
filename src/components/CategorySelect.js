@@ -40,11 +40,13 @@ class CategorySelect extends Component {
 
         return (
             <div>
-                <div>
-                    <Header page="Categories"/>
-                </div>
-                <div className="tile-wrapper">
-                    {categories}
+                <div className="cat-select-page">
+                    <div>
+                        <Header page="Categories"/>
+                    </div>
+                    <div className="tile-wrapper">
+                        {categories}
+                    </div>
                 </div>
             </div>
         )

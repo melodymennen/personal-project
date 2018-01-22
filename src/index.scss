@@ -3,6 +3,8 @@
 $login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-357743.jpeg';
 $home_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-594060.jpeg';
 $recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-301669.jpeg';
+$category_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cheese.jpeg';
+$favorites_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/food-pot-kitchen-cooking.jpg';
 $logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/Screen+Shot+2018-01-22+at+1.14.45+PM.png';
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
 $splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(44, 62, 80) 62.4%,rgb(44, 62, 80) 62.4%,rgba(44, 62, 80, 0.30) 100%);
@@ -77,9 +79,12 @@ a {
 
 // Login
 .body {
-    height: 100vh;
+    min-height: 100vh;
 	background-image: url($login_background);
 	background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-position: top;
     background-color: $background_color;
@@ -121,6 +126,10 @@ a {
     }
 }
 
+.auth0-lock-header{
+    display: none;
+  }
+
 // Home
 .uh-oh {
 	padding: 70px;
@@ -135,14 +144,14 @@ a {
 }
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-image: url($home_background);
 }
 
 .welcome {
     width: 300px;
-    margin: 10px auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     font-size: 1.25em;
@@ -153,7 +162,7 @@ a {
 	flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-	margin: 20px;
+	margin: 30px 20px;
 }
 
 .tile {
@@ -194,8 +203,6 @@ a {
 }
 
 .recipe-name {
-    // font-family: 'Euphoria Script', $font_family_1;
-    // font-size: 3.25em;
     font-size: 2.5em;
     text-transform: capitalize;
 }
@@ -268,8 +275,153 @@ a {
 
 // AllRecipes
 .page{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: url($recipe_background);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    background-position: top;
 }
+
+// CategorySelect
+.cat-select-page{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url($category_background);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+// Category
+.cat-page{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url($category_background);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+// Favorites 
+.fav-page {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url($favorites_background);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+// media queries 
+@media(max-width: 885px){
+// Header 
+.page-name {
+    display: none;
+}
+// NewRecipe & EditRecipe
+.top, .lower {
+    width: 90%;
+    button {
+        width: 95%;
+    }
+}
+
+.lower {
+    width: 100%;
+    div {
+        width: 100%;
+        margin: 7px;
+    }
+}
+
+.left, .right {
+    width: 50%;
+    margin: 5px;
+}
+
+.input {
+    width: 95%;
+    padding: 5px;
+    margin: 5px; 
+}
+
+.category {
+    width: 95%;
+}
+
+.notes {
+    width: 95%;
+}
+}
+
+@media(max-width: 595px){
+// Header 
+.header {
+    background-color: $black-color;
+}
+
+.header-content {
+    font-size: .85em;
+	line-height: 60px;    
+	div {
+        width: 50%;
+        margin: 0;
+	}
+}
+
+.menu-items{
+    width: 100%;
+    text-align: right;
+    margin: 0 5px;
+}
+
+.site-name {
+    font-size: 1.25em;
+}
+
+// Login
+.logo {
+    height: 200px;
+    width: 250px;
+}
+
+.login {
+    button {
+        font-size: 18px;
+    }
+}
+// misc
+.tile {
+    font-size: $main_font_size;
+}
+
+.welcome {
+    font-size: 1em;
+}
+
+.tile-wrapper {
+	margin: 20px;
+}
+.recipe-name {
+    font-size: 2em;
+}
+// NewRecipe & EditRecipe
+.input-wrapper {
+    flex-direction: column;
+}
+
+.left, .right {
+    width: 100%;
+    margin: 10px;
+}
+}
+ 

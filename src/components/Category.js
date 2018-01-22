@@ -38,14 +38,16 @@ class Category extends Component {
         })
         return (
             <div>
-                <div>
-                    <Header page={this.state.page}/>
-                </div>
-                <div className="back">
-                    <Link to="/all-categories">back to all categories</Link>
-                </div>
-                <div className="tile-wrapper">
-                    {category}
+                <div className="cat-page">
+                    <div>
+                        <Header page={this.state.page}/>
+                    </div>
+                    <div className="back">
+                        <Link to="/all-categories">back to all categories</Link>
+                    </div>
+                    <div className="tile-wrapper">
+                        {category}
+                    </div>
                 </div>
             </div>
         )
