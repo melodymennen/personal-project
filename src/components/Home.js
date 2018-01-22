@@ -6,6 +6,16 @@ import Header from './Header';
 import axios from 'axios';
 
 class Home extends Component {
+    // constructor(){
+    //     super()
+
+    //     this.state = {
+    //         display: 'none'
+    //     }
+
+    //     this.showAllRecipes = this.showAllRecipes.bind(this)
+    //     this.showCategories = this.showCategories.bind(this)
+    // }
    
     componentDidMount() {
         axios.get('/user-data').then(response => {
@@ -16,6 +26,14 @@ class Home extends Component {
             }
         })
     }
+
+    // showAllRecipes(){
+    //     this.setState({display:'recipes'})
+    // }
+
+    // showCategories(){
+    //     this.setState({display:'categories'})
+    // }
 
     render () {
         return (
@@ -34,9 +52,18 @@ class Home extends Component {
                             Welcome, {this.props.user.name}!
                         </div>
                         <div className="tile-wrapper">
+                            {/* <div className="tile" onClick={this.showAllRecipes}>view all recipes</div>
+                            <div className="tile" onClick={this.showCategories}>view recipes by category</div> */}
                             <Link to="/all-recipes"><div className="tile">view all recipes</div> </Link>
                             <Link to="/all-categories"><div className="tile">view recipes by category</div> </Link>
                         </div>
+                        {/* {this.state.display === 'recipes' && 
+                            <AllRecipes />
+                        }
+                        {this.state.display === 'categories' && 
+                            <CategorySelect />
+                        } */}
+
                     </div>
                 }
             </div>

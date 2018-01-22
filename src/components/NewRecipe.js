@@ -74,6 +74,7 @@ class NewRecipe extends Component {
                     directions: '',
                     notes: '' 
                 })
+                this.props.history.push('/home')
             })
         }
     }
@@ -88,7 +89,7 @@ class NewRecipe extends Component {
                     <div className="input-wrapper">
                         <div className="left">
                             Recipe Name 
-                            <input placeholder='recipe name' className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
+                            <input placeholder='recipe name' maxLength="55" className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
                             Ingredients 
                             <textarea placeholder='recipe ingredients' className="ingredients input big-input" value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
                         </div>

@@ -66,12 +66,14 @@ class Recipe extends Component {
         })
 
         return (
-            <div>
+            <div className="page">
                 <div>
                     <Header />
                 </div>
+                <div className="back">
+                    <Link to="/all-recipes">back to all recipes</Link>
+                </div>
                 <div className="recipe">
-                    {/* <Link to="all-recipes">back to all recipes</Link> */}
                     {recipe}
                 </div>
             </div>
