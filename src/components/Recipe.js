@@ -50,6 +50,12 @@ class Recipe extends Component {
 
     render() {
         const recipe = this.state.recipe.map(item => {
+            const array = item.ingredients.split('\n')
+            const ingredients = array.map(ingredient => {
+                return (
+                    <li>{ingredient}</li>
+                )
+            })
             return (
                 <div key={item.id}>
                     <div className="recipe-name">{item.name}</div>
@@ -58,7 +64,7 @@ class Recipe extends Component {
                         <Link to={`/edit-recipe/${this.state.recipe[0].id}`} className="icons"><MdEdit/></Link>
                         <div className="icons"onClick={() => this.deleteRecipe(this.state.recipe[0].id)}><MdDelete/></div>
                     </div>
-                    <p>{item.ingredients}</p>
+                    <ul className="ingredients">{ingredients}</ul>
                     <p>{item.directions}</p>
                     <p>{item.notes}</p>
                 </div>

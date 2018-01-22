@@ -145,6 +145,10 @@ a:visited {
   font-size: 2.5em;
   text-transform: capitalize; }
 
+.ingredients {
+  padding: 0;
+  list-style: none; }
+
 .top, .lower {
   width: 90%;
   margin: auto;

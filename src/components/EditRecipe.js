@@ -82,11 +82,12 @@ class EditRecipe extends Component {
     }
 
     render () {
+        const array = this.state.ingredients.split('\n')
+        console.log(array)
         return (
             <div>
                 <div>
                     <Header page="Edit Recipe"/>
-                    <p>{this.state.ingredients}</p>
                 </div>
                 <div className="top">
                     <div className="input-wrapper">

@@ -199,6 +199,11 @@ a {
     text-transform: capitalize;
 }
 
+.ingredients{
+    padding: 0;
+    list-style: none;
+}
+
 // NewRecipe & EditRecipe
 .top, .lower {
     width: 90%;

@@ -40,6 +40,9 @@ class Category extends Component {
                 <div>
                     <Header />
                 </div>
+                <div className="back">
+                    <Link to="/all-categories">back to all categories</Link>
+                </div>
                 <div className="tile-wrapper">
                     {category}
                 </div>
