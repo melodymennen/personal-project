@@ -68,9 +68,15 @@ module.exports = {
         const db =  req.app.get('db')
         const { user } = req.session
         const { recipe } = req.body
-        
-        db.add_favorite([user.id, recipe.id]).then(() => {
-            res.status(200).send('success')
-        }).catch(error => console.log('add favorite error',error))
+
+        db.check_favorites([user.id, recipe.id]).then(response => {
+            if(response.length){
+                res.send('already a favorite')
+            } else {
+                db.add_favorite([user.id, recipe.id]).then(() => {
+                    res.status(200).send('success')
+                }).catch(error => console.log('add favorite error',error))
+            }
+        }).catch(error => console.log('check favorites error', error))    
     }
 }
