@@ -54,23 +54,27 @@ a:visited {
   align-items: center; }
 
 .splash {
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 5px;
   margin: auto;
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: rgba(255, 255, 255, 0.2); }
+  background-image: -webkit-radial-gradient(center center, ellipse farthest-corner, #2c3e50 62.4%, #2c3e50 62.4%, rgba(44, 62, 80, 0.3) 100%); }
 
 .logo {
   margin: 20px 10px;
-  font-size: 2em; }
+  font-size: 2em;
+  height: 220px;
+  width: 300px;
+  background-image: url("https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/Screen+Shot+2018-01-22+at+1.14.45+PM.png");
+  background-size: cover; }
 
 .login {
   margin: auto; }
   .login button {
-    color: #EFEDEF;
-    background-color: #222022;
+    color: #222022;
+    background-color: #EFEDEF;
     border: none;
     padding: 10px 15px;
     font-size: 20px;
@@ -120,10 +124,6 @@ a:visited {
   flex-wrap: wrap;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.2); }
-
-.page {
-  background-image: "https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-372882.jpeg";
-  background-size: cover; }
 
 .recipe {
   margin: 20px auto;
@@ -198,3 +198,9 @@ a:visited {
 
 .notes {
   width: 820px; }
+
+.page {
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-301669.jpeg");
+  background-size: cover; }

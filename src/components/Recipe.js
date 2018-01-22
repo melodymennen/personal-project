@@ -72,7 +72,7 @@ class Recipe extends Component {
         })
 
         return (
-            <div className="page">
+            <div>
                 <div>
                     <Header />
                 </div>

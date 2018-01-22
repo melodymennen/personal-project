@@ -38,11 +38,13 @@ class AllRecipes extends Component {
 
         return (
             <div>
-                <div>
-                    <Header page="All Recipes"/>
-                </div>
-                <div className="tile-wrapper">
-                    {recipes}
+                <div className="page">
+                    <div>
+                        <Header page="All Recipes"/>
+                    </div>
+                    <div className="tile-wrapper">
+                        {recipes}
+                    </div>
                 </div>
             </div>
         )

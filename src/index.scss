@@ -2,10 +2,12 @@
 
 $login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-357743.jpeg';
 $home_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-594060.jpeg';
-$recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-372882.jpeg';
+$recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-301669.jpeg';
+$logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/Screen+Shot+2018-01-22+at+1.14.45+PM.png';
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
+$splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(44, 62, 80) 62.4%,rgb(44, 62, 80) 62.4%,rgba(44, 62, 80, 0.30) 100%);
 $transparent_background: rgba(255, 255, 255, 0.2);
-$transparent_background_dark: rgba(31, 23, 23, 0.2);
+$transparent_background_dark: rgba(44, 62, 80, 0.2);
 $font_family_1: 'Poppins', sans-serif;
 $text_color: white;
 $white-color: #EFEDEF;
@@ -88,25 +90,29 @@ a {
 .splash {
 	// width: 300px;
     // height: 200px;
-    padding: 20px;
+    padding: 20px 40px;
 	border-radius: $border_radius;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	color: $text_color;
-	background-color: $transparent_background;
+    color: $text_color;
+	background-image: $splash_gradient;
 }
 
 .logo {
     margin: 20px 10px;
     font-size: $logo_font-size;
+    height: 220px;
+    width: 300px;
+    background-image: url($logo);
+    background-size: cover;
 }
 
 .login {
     margin: auto;
     button {
-        color: $white-color;
-        background-color: $black-color;
+        color: $black-color;
+        background-color: $white-color;
         border: none;
         padding: 10px 15px;
         font-size: 20px;
@@ -167,11 +173,6 @@ a {
 }
 
 // Recipe
-.page{
-    background-image: $recipe_background;
-    background-size: cover;
-}
-
 .recipe {
     margin: 20px auto;
     padding: 10px 20px;
@@ -265,3 +266,10 @@ a {
     width: 820px;
 }
 
+// AllRecipes
+.page{
+    height: 100vh;
+    width: 100%;
+    background-image: url($recipe_background);
+    background-size: cover;
+}

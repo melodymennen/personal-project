@@ -25,6 +25,7 @@ class CategorySelect extends Component {
         })
         axios.get('/api/categories').then(response => {
             this.setState({categories: response.data})
+            console.log(response.data)
         })
     }
 

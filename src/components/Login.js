@@ -42,7 +42,7 @@ class Login extends Component {
             <div>
                 <div className="body">
                     <div className="splash">
-                        <div className="logo">Site Name/Logo</div>
+                        <div className="logo"></div>
                         <div className="login button">
                             <button onClick={this.login}>Login/Register</button>
                         </div>
