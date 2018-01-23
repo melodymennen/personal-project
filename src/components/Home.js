@@ -6,6 +6,13 @@ import Header from './Header';
 import axios from 'axios';
 
 class Home extends Component {
+    constructor(){
+        super()
+
+        this.state = {
+            recipeId: 0
+        }
+    }
    
     componentDidMount() {
         axios.get('/user-data').then(response => {
@@ -14,6 +21,9 @@ class Home extends Component {
             } else {
                 this.props.history.push('/')
             }
+        })
+        axios.get('/api/recipes/random').then(response => {
+            this.setState({recipeId: response.data.id})
         })
     }
 
@@ -36,6 +46,7 @@ class Home extends Component {
                         <div className="tile-wrapper">
                             <Link to="/all-recipes"><div className="tile">view all recipes</div> </Link>
                             <Link to="/all-categories"><div className="tile">view recipes by category</div> </Link>
+                            <Link to={`/recipes/${this.state.recipeId}`}><div className="tile">view random recipe</div> </Link>
                         </div>
                     </div>
                 }

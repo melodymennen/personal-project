@@ -48,18 +48,19 @@ app.get('/user-data', (req, res) => {
     }
 });
 
-// const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-// app.post('/api/send-ingredients', (req, res) => {
-//     client.messages.create({
-//         to: req.body.number,
-//         from: +12223334444,
-//         body: req.body.ingredients
-//     }).then(message => console.log(message.sid))
-// })
+app.post('/api/send-ingredients', (req, res) => {
+    client.messages.create({
+        to: req.body.number,
+        from: +14805256886,
+        body: req.body.name + '\n'+ req.body.ingredients
+    }).then(message => console.log(message.sid))
+})
 
 app.post('/api/recipes', controller.newRecipe)
 app.get('/api/recipes', controller.getAll)
+app.get('/api/recipes/random', controller.getRandom)
 app.get('/api/recipes/:recipe_id', controller.oneRecipe)
 app.get('/api/categories', controller.getCategories)
 app.get('/api/categories/:category_id', controller.recipesByCategory)

@@ -78,5 +78,14 @@ module.exports = {
                 }).catch(error => console.log('add favorite error',error))
             }
         }).catch(error => console.log('check favorites error', error))    
+    },
+    getRandom: (req, res, next) => {
+        const db =  req.app.get('db')
+        const { user } = req.session
+
+        db.read_all_recipes([user.id]).then(recipes => {
+
+            res.status(200).json(recipes[Math.floor((Math.random() * recipes.length-1) + 1)])
+        }).catch(error => console.log('read all recipes for random error',error))
     }
 }

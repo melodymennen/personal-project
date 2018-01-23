@@ -21,6 +21,7 @@ class Recipe extends Component {
         this.addToFavorites = this.addToFavorites.bind(this)
         this.deleteRecipe = this.deleteRecipe.bind(this)
         this.sendText = this.sendText.bind(this)
+        this.sendShit = this.sendShit.bind(this)
     }
 
     componentDidMount() {
@@ -55,14 +56,19 @@ class Recipe extends Component {
     sendText(){
         var num = prompt('Please enter your phone number')
         if(num % 1 ===0 && num.length === 10) {
-            this.setState({number: num})
+            this.setState({number: num}, this.sendShit)
         } else {
             alert('You did not enter a valid number')
         }
-        // axios.post('/api/send-ingredients', {
-        //     ingredients: this.state.recipe[0].ingredients,
-        //     number: '+1' + this.state.number
-        // }).then(res => res.status(200).json('success'))
+    }
+
+    sendShit(){
+        console.log(this.state.number)
+        axios.post('/api/send-ingredients', {
+            name: this.state.recipe[0].name,
+            ingredients: this.state.recipe[0].ingredients,
+            number: '+1' + this.state.number
+        }).then(res => res.status(200).json('success'))
     }
 
     render() {
