@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
             }
         }).catch(error => console.log('find user error',error))
     }).catch(error => console.log('get auth0 data error',error))
-})
+});
 
 app.get('/user-data', (req, res) => {
     if (req.session.user){
@@ -46,7 +46,17 @@ app.get('/user-data', (req, res) => {
     } else {
         res.status(403)
     }
-})
+});
+
+// const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
+// app.post('/api/send-ingredients', (req, res) => {
+//     client.messages.create({
+//         to: req.body.number,
+//         from: +17777777777,
+//         body: req.body.ingredients
+//     }).then(message => console.log(message.sid))
+// })
 
 app.post('/api/recipes', controller.newRecipe)
 app.get('/api/recipes', controller.getAll)

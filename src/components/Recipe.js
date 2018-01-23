@@ -14,12 +14,13 @@ class Recipe extends Component {
         super()
 
         this.state = {
-            recipe: []
+            recipe: [],
+            number: 0
         }
 
         this.addToFavorites = this.addToFavorites.bind(this)
         this.deleteRecipe = this.deleteRecipe.bind(this)
-        // this.sendEmail = this.sendEmail.bind(this)
+        this.sendText = this.sendText.bind(this)
     }
 
     componentDidMount() {
@@ -51,7 +52,18 @@ class Recipe extends Component {
         })
     }
 
-    // sendEmail(){}
+    sendText(){
+        var num = prompt('Please enter your phone number')
+        if(num % 1 ===0 && num.length === 10) {
+            this.setState({number: num})
+        } else {
+            alert('You did not enter a valid number')
+        }
+        // axios.post('/api/send-ingredients', {
+        //     ingredients: this.state.recipe[0].ingredients,
+        //     number: '+1' + this.state.number
+        // })
+    }
 
     render() {
         const recipe = this.state.recipe.map(item => {
@@ -68,7 +80,7 @@ class Recipe extends Component {
                         <div className="icons" onClick={this.addToFavorites}><Heart/></div>
                         <Link to={`/edit-recipe/${this.state.recipe[0].id}`} className="icons"><MdEdit/></Link>
                         <div className="icons"onClick={() => this.deleteRecipe(this.state.recipe[0].id)}><MdDelete/></div>
-                        <div className="mail icons" onClick={this.sendEmail}><TiMail/></div>
+                        <div className="mail icons" onClick={this.sendText}><TiMail/></div>
                     </div>
                     <ul className="ingredients">{ingredients}</ul>
                     <p>{item.directions}</p>
