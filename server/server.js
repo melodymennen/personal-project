@@ -53,7 +53,7 @@ app.get('/user-data', (req, res) => {
 // app.post('/api/send-ingredients', (req, res) => {
 //     client.messages.create({
 //         to: req.body.number,
-//         from: +17777777777,
+//         from: +12223334444,
 //         body: req.body.ingredients
 //     }).then(message => console.log(message.sid))
 // })

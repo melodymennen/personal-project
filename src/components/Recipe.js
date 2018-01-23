@@ -62,7 +62,7 @@ class Recipe extends Component {
         // axios.post('/api/send-ingredients', {
         //     ingredients: this.state.recipe[0].ingredients,
         //     number: '+1' + this.state.number
-        // })
+        // }).then(res => res.status(200).json('success'))
     }
 
     render() {
