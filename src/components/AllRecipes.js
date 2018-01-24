@@ -42,6 +42,9 @@ class AllRecipes extends Component {
                     <div>
                         <Header page="All Recipes"/>
                     </div>
+                    <div className="back">
+                        <Link to="/home">back to home</Link>
+                    </div>
                     <div className="tile-wrapper">
                         {recipes}
                     </div>

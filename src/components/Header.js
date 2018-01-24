@@ -9,13 +9,11 @@ const Header = (props) => {
             <div className="menu-items header-content">
                 <div><Link to="/new-recipe">NEW RECIPE</Link></div>
                 <div><Link to="/favorites">FAVORITES</Link></div>
+                {/* <div onClick={this.logout}>LOGOUT</div> */}
             </div>
         </header>
     )
 }
 
-// const styles = {
-    
-// }
 
 export default Header;

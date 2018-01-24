@@ -44,6 +44,9 @@ class CategorySelect extends Component {
                     <div>
                         <Header page="Categories"/>
                     </div>
+                    <div className="back">
+                        <Link to="/home">back to home</Link>
+                    </div>
                     <div className="tile-wrapper">
                         {categories}
                     </div>

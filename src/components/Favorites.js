@@ -41,6 +41,9 @@ class Favorites extends Component {
                     <div>
                         <Header page="Favorites"/>
                     </div>
+                    <div className="back">
+                        <Link to="/home">back to home</Link>
+                    </div>
                     <div className="tile-wrapper">
                         {favorites}
                     </div>

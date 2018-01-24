@@ -1,8 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Poppins";
 
 $login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pasta-cheese-egg-food.jpg';
-$home_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-594060.jpeg';
-$recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-301669.jpeg';
+$home_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/tomato+mushroom';
+$recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cinnamon';
 $favorites_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/food-pot-kitchen-cooking.jpg';
 // $category_select_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cookies-baked-goods-frisch-chocolate-94278.jpeg';
 $category_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cheese.jpeg';
@@ -10,9 +10,10 @@ $logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/person
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
 $splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(34, 32, 34) 62.4%,rgb(34, 32, 34) 62.4%,rgba(34, 32, 34, 0.30) 100%);
 $transparent_background: rgba(255, 255, 255, 0.2);
-// $transparent_background_dark: rgba(34, 32, 34, 0.2);
+// $transparent_background_dark: rgba(34, 32, 34, 0.3);
 $black_background: rgba(10,10,10, 1);
 $font_family_1: 'Poppins', sans-serif;
+$text_shadow: 2px 2px 2px black;
 $white_color: #EFEDEF;
 $black_color: #222022;
 $main_font_size: 16px;
@@ -176,7 +177,8 @@ a {
     align-items: center;
     flex-wrap: wrap;
     border-radius: $border_radius;
-	background-color: $transparent_background;
+    background-color: $transparent_background;
+    text-shadow: $text_shadow;
 }
 
 // Recipe
@@ -198,10 +200,10 @@ a {
 
 .back {
     margin: 15px 24px;
+    text-shadow: $text_shadow;
 }
 
 .recipe-photo {
-    // width: 400px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
