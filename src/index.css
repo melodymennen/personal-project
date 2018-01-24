@@ -189,12 +189,14 @@ a:visited {
   width: 400px;
   padding: 5px;
   margin: 5px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif; }
 
 .category {
   width: 400px;
   margin: 7px;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "Poppins", sans-serif; }
 
 .big-input {
   height: 200px;
