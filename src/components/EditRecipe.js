@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import FileUpload from './FileUpload';
+import request from 'superagent';
 import Header from './Header';
 import axios from 'axios';
 
@@ -14,7 +16,8 @@ class EditRecipe extends Component {
             category: 0, 
             ingredients: '',
             directions: '',
-            notes: ''
+            notes: '', 
+            pictureUrl: ''
         }
 
         this.updateName = this.updateName.bind(this)
@@ -23,6 +26,7 @@ class EditRecipe extends Component {
         this.updateDirections = this.updateDirections.bind(this)
         this.updateNotes = this.updateNotes.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.onDrop = this.onDrop.bind(this)
     }
 
     componentDidMount() {
@@ -40,7 +44,8 @@ class EditRecipe extends Component {
                 category: response.data[0].category_id,
                 ingredients: response.data[0].ingredients,
                 directions: response.data[0].directions,
-                notes: response.data[0].notes
+                notes: response.data[0].notes,
+                pictureUrl: response.data[0].pictureUrl
             })
         })
     }
@@ -55,7 +60,6 @@ class EditRecipe extends Component {
 
     updateIngredients(value){
         this.setState({ingredients: value})
-        console.log(value)
     }
 
     updateDirections(value){
@@ -66,6 +70,18 @@ class EditRecipe extends Component {
         this.setState({notes: value})
     }
 
+    onDrop = (files) => {
+        request
+        .post('/upload')
+        .attach('recipe_image', files[0])
+        .end((error, response) => {
+            if (error) console.log('on drop error',error)
+            console.log('File Uploaded Succesfully')
+            console.log(response.text)
+            this.setState({ pictureUrl: response.text})
+        })
+    }
+
     handleSubmit(){
         const body = {
             id: this.state.id,
@@ -73,7 +89,8 @@ class EditRecipe extends Component {
             category: this.state.category,
             ingredients: this.state.ingredients, 
             directions: this.state.directions,
-            notes: this.state.notes
+            notes: this.state.notes,
+            picture_url: this.state.pictureUrl
         }
 
         axios.put(`/api/recipes/${this.props.match.params.recipe_id}`, body).then(() => {
@@ -121,6 +138,7 @@ class EditRecipe extends Component {
                             <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                         </div>
                         <div>
+                            <FileUpload onDrop={this.onDrop} className="dropzone" value={this.state.pictureUrl}/>
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>

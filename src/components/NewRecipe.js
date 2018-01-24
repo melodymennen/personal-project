@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import FileUpload from './FileUpload';
+import request from 'superagent';
 import Header from './Header';
 import axios from 'axios';
-// import ReactS3Uploader from 'react-s3-uploader';
 
 class NewRecipe extends Component {
     constructor(){
@@ -14,7 +15,8 @@ class NewRecipe extends Component {
             category: 0, 
             ingredients: '',
             directions: '',
-            notes: ''
+            notes: '',
+            pictureUrl: ''
         }
 
         this.updateName = this.updateName.bind(this)
@@ -23,6 +25,7 @@ class NewRecipe extends Component {
         this.updateDirections = this.updateDirections.bind(this)
         this.updateNotes = this.updateNotes.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.onDrop = this.onDrop.bind(this)
     }
 
     componentDidMount() {
@@ -55,13 +58,26 @@ class NewRecipe extends Component {
         this.setState({notes: value})
     }
 
+    onDrop = (files) => {
+        request
+        .post('/upload')
+        .attach('recipe_image', files[0])
+        .end((error, response) => {
+            if (error) console.log('on drop error',error)
+            console.log('File Uploaded Succesfully')
+            console.log(response.text)
+            this.setState({ pictureUrl: response.text})
+        })
+    }
+
     handleSubmit(){
         const body = {
             name: this.state.name,
             category: this.state.category,
             ingredients: this.state.ingredients, 
             directions: this.state.directions,
-            notes: this.state.notes
+            notes: this.state.notes,
+            picture_url: this.state.pictureUrl
         }
 
         if(this.state.category === 0){
@@ -73,7 +89,8 @@ class NewRecipe extends Component {
                     category: 0, 
                     ingredients: '',
                     directions: '',
-                    notes: '' 
+                    notes: '',
+                    pictureUrl: '' 
                 })
                 this.props.history.push('/home')
             })
@@ -118,12 +135,7 @@ class NewRecipe extends Component {
                             <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                         </div>
                         <div>
-                            {/* <ReactS3Uploader 
-                                signingUrl="/s3/sign"
-                                signingUrlMethod="GET"
-                                accept="image/*"
-                                s3path="/uploads/"
-                                /> */}
+                            <FileUpload onDrop={this.onDrop} className="dropzone"/>
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>

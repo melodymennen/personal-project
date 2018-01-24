@@ -169,10 +169,12 @@ a:visited {
     border-radius: 5px;
     text-decoration: none; }
 
-.lower div {
-  margin: auto;
-  display: flex;
-  flex-direction: column; }
+.lower {
+  width: 100%; }
+  .lower div {
+    margin: auto;
+    display: flex;
+    flex-direction: column; }
 
 .input-wrapper {
   display: flex;

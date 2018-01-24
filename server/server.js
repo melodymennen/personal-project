@@ -64,8 +64,9 @@ AWS.config.update({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region: process.env.REGION
-  });
-  const s3 = new AWS.S3();
+  })
+
+  const s3 = new AWS.S3()
   const upload = multer({
     storage: multer.memoryStorage(),
     limits: {
@@ -73,7 +74,8 @@ AWS.config.update({
     }
   })
 
-  app.post('/api/upload', upload.single('recipe_image'), (req, res) => {
+  app.post('/upload', upload.single('recipe_image'), (req, res) => {
+      const fileName = req.file.originalname.split(' ').join('+')
     s3.putObject({
         Bucket: process.env.BUCKET,
         Key: req.file.originalname,
@@ -81,9 +83,9 @@ AWS.config.update({
         ContentType: "image/png",
         ACL: 'public-read'
         }, (err) => {
-        console.log(err)
+        console.log('upload error', err)
         if (err) return res.status(400).send(err)
-        res.send(`https://s3-${process.env.REGION}-1.amazonaws.com/${process.env.BUCKET}/${process.env.FOLDER}/${req.file.originalname}`)
+        res.send(`https://s3-${process.env.REGION}.amazonaws.com/${process.env.BUCKET}/${fileName}`)
     })
 })
 
