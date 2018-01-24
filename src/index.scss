@@ -6,7 +6,7 @@ $recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-m
 $favorites_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/food-pot-kitchen-cooking.jpg';
 // $category_select_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cookies-baked-goods-frisch-chocolate-94278.jpeg';
 $category_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cheese.jpeg';
-$logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/logo-dark';
+$logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/logo-forked';
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
 $splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(34, 32, 34) 62.4%,rgb(34, 32, 34) 62.4%,rgba(34, 32, 34, 0.30) 100%);
 $transparent_background: rgba(255, 255, 255, 0.2);
@@ -198,6 +198,15 @@ a {
 
 .back {
     margin: 15px 24px;
+}
+
+.recipe-photo {
+    // width: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: $border_radius;
+    background-color: aqua;
 }
 
 .recipe-name {

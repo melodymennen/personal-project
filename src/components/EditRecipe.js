@@ -45,7 +45,7 @@ class EditRecipe extends Component {
                 ingredients: response.data[0].ingredients,
                 directions: response.data[0].directions,
                 notes: response.data[0].notes,
-                pictureUrl: response.data[0].pictureUrl
+                pictureUrl: response.data[0].picture_url
             })
         })
     }
@@ -113,6 +113,8 @@ class EditRecipe extends Component {
                             <input placeholder='recipe name' maxLength="55" className="name input" value={this.state.name} onChange={e => this.updateName(e.target.value)}/>
                             Ingredients 
                             <textarea placeholder='recipe ingredients' className="ingredients input big-input" value={this.state.ingredients} onChange={e => this.updateIngredients(e.target.value)}/>
+                            Upload a photo
+                            <FileUpload onDrop={this.onDrop} />
                         </div>
                         <div className="right">
                             Category 
@@ -130,15 +132,12 @@ class EditRecipe extends Component {
                             </select>
                             Directions 
                             <textarea placeholder='recipe directions' className="directions input big-input" value={this.state.directions} onChange={e => this.updateDirections(e.target.value)}/>
+                            Notes 
+                            <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                         </div>
                     </div>
                     <div className="lower">
                         <div>
-                            Notes 
-                            <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
-                        </div>
-                        <div>
-                            <FileUpload onDrop={this.onDrop} value={this.state.pictureUrl}/>
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>

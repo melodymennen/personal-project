@@ -71,6 +71,7 @@ class Recipe extends Component {
         }).then(res => res.status(200).json('success'))
     }
 
+    
     render() {
         const recipe = this.state.recipe.map(item => {
             const array = item.ingredients.split('\n')
@@ -79,8 +80,16 @@ class Recipe extends Component {
                     <li>{ingredient}</li>
                 )
             })
+            const imageShow = {
+                backgroundImage: `url(${item.picture_url})`,
+                height: '250px'
+            }
+            const imageHide = {
+                display: 'none'
+            }
             return (
                 <div key={item.id}>
+                    <div className="recipe-photo" style={item.picture_url ? imageShow : imageHide}></div>
                     <div className="recipe-name">{item.name}</div>
                     <div className="icon-wrapper">
                         <div className="icons" onClick={this.addToFavorites}><Heart/></div>

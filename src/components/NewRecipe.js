@@ -135,8 +135,6 @@ class NewRecipe extends Component {
                     </div>
                     <div className="lower">
                         <div>
-                        </div>
-                        <div>
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>
