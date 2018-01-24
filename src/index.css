@@ -204,8 +204,16 @@ a:visited {
   height: 200px;
   resize: none; }
 
-.notes {
-  width: 820px; }
+.dropzone {
+  border: #EFEDEF 1px solid;
+  padding: 20px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  .dropzone .big-icon {
+    font-size: 3em;
+    margin: 5px; }
 
 .page {
   min-height: 100vh;

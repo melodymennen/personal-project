@@ -237,6 +237,7 @@ a {
         flex-direction: column;
     }
 }
+
 .input-wrapper {
     display: flex;
     justify-content: center;
@@ -271,7 +272,22 @@ a {
 }
 
 .notes {
-    width: 820px;
+    // width: 820px;
+}
+
+.dropzone {
+    // width: 95%;
+    // height: 100px;
+    border: $white_color 1px solid;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .big-icon {
+        font-size: 3em;
+        margin: 5px;
+    }
 }
 
 // AllRecipes

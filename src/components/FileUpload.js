@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import request from 'superagent';
 import Dropzone from 'react-dropzone';
+import AddPhoto from 'react-icons/lib/md/add-to-photos';
 
 class FileUpload extends Component {
     // onDrop = (files) => {
@@ -17,8 +18,9 @@ class FileUpload extends Component {
     render(){
         return(
             <div>
-                <Dropzone onDrop={ this.props.onDrop } multiple={ false }>
+                <Dropzone onDrop={ this.props.onDrop } multiple={ false } className="dropzone input big-input" >
                     <div className="droptext">Drop a file here, or click to select a file to upload.</div>
+                    <div><AddPhoto className="icons big-icon"/></div>
                 </Dropzone>
             </div>
         )

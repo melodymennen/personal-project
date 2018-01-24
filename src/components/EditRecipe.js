@@ -138,7 +138,7 @@ class EditRecipe extends Component {
                             <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                         </div>
                         <div>
-                            <FileUpload onDrop={this.onDrop} className="dropzone" value={this.state.pictureUrl}/>
+                            <FileUpload onDrop={this.onDrop} value={this.state.pictureUrl}/>
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>
