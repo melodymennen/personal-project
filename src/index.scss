@@ -3,18 +3,18 @@
 $login_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pasta-cheese-egg-food.jpg';
 $home_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-594060.jpeg';
 $recipe_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/pexels-photo-301669.jpeg';
+$favorites_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/food-pot-kitchen-cooking.jpg';
 // $category_select_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cookies-baked-goods-frisch-chocolate-94278.jpeg';
 $category_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/cheese.jpeg';
-$favorites_background: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/food-pot-kitchen-cooking.jpg';
 $logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/logo-dark';
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
 $splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(34, 32, 34) 62.4%,rgb(34, 32, 34) 62.4%,rgba(34, 32, 34, 0.30) 100%);
 $transparent_background: rgba(255, 255, 255, 0.2);
 // $transparent_background_dark: rgba(34, 32, 34, 0.2);
-$font_family_1: 'Poppins', sans-serif;
-$white-color: #EFEDEF;
-$black-color: #222022;
 $black_background: rgba(10,10,10, 1);
+$font_family_1: 'Poppins', sans-serif;
+$white_color: #EFEDEF;
+$black_color: #222022;
 $main_font_size: 16px;
 $logo_font-size: 2em;
 $border_radius: 5px;
@@ -36,17 +36,17 @@ body {
 	font-family: $font_family_1;
 	font-size: $main_font_size;
     background-color: $black_background;
-    color: $white-color;
+    color: $white_color;
 }
 
 a {
 	&:link {
         text-decoration: none;
-        color: $white-color;
+        color: $white_color;
 	}
 	&:visited {
         text-decoration: none;
-        color: $white-color;
+        color: $white_color;
 	}
 }
 
@@ -114,8 +114,8 @@ a {
 .login {
     margin: auto;
     button {
-        color: $black-color;
-        background-color: $white-color;
+        color: $black_color;
+        background-color: $white_color;
         border: none;
         padding: 10px 15px;
         font-size: 20px;
@@ -219,7 +219,7 @@ a {
     justify-content: center;
     button {
         width: 400px;
-        background-color: $white-color;
+        background-color: $white_color;
         border: none;
         padding: 10px 15px;
         margin: 10px;
@@ -282,17 +282,8 @@ a {
     background-position: top;
 }
 
-// CategorySelect
-.cat-select-page{
-    min-height: 100vh;
-    width: 100%;
-    background-image: url($category_background);
-    @include background-size();
-    background-position: center;
-}
-
-// Category
-.cat-page{
+// CategorySelect & Category 
+.cat-select-page, .cat-page{
     min-height: 100vh;
     width: 100%;
     background-image: url($category_background);
@@ -342,11 +333,7 @@ a {
     margin: 5px; 
 }
 
-.category {
-    width: 95%;
-}
-
-.notes {
+.category, .notes {
     width: 95%;
 }
 }
@@ -354,7 +341,7 @@ a {
 @media(max-width: 595px){
 // Header 
 .header {
-    background-color: $black-color;
+    background-color: $black_color;
 }
 
 .header-content {

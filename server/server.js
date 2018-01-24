@@ -3,7 +3,9 @@ const controller = require('./controller');
 const session = require('express-session');
 const express = require('express');
 const massive = require('massive');
+const multer = require('multer');
 const axios = require('axios');
+const AWS = require('aws-sdk');
 require('dotenv').config();
 
 const app = express();
@@ -56,6 +58,33 @@ app.post('/api/send-ingredients', (req, res) => {
         from: +14805256886,
         body: req.body.name + '\n'+ req.body.ingredients
     }).then(message => console.log(message.sid))
+})
+
+AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.REGION
+  });
+  const s3 = new AWS.S3();
+  const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+      fileSize: 52428800
+    }
+  })
+
+  app.post('/api/upload', upload.single('recipe_image'), (req, res) => {
+    s3.putObject({
+        Bucket: process.env.BUCKET,
+        Key: req.file.originalname,
+        Body: req.file.buffer,
+        ContentType: "image/png",
+        ACL: 'public-read'
+        }, (err) => {
+        console.log(err)
+        if (err) return res.status(400).send(err)
+        res.send(`https://s3-${process.env.REGION}-1.amazonaws.com/${process.env.BUCKET}/${process.env.FOLDER}/${req.file.originalname}`)
+    })
 })
 
 app.post('/api/recipes', controller.newRecipe)

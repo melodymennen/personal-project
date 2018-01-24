@@ -3,6 +3,7 @@ import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import Header from './Header';
 import axios from 'axios';
+// import ReactS3Uploader from 'react-s3-uploader';
 
 class NewRecipe extends Component {
     constructor(){
@@ -117,6 +118,12 @@ class NewRecipe extends Component {
                             <textarea placeholder='notes' className="notes input big-input" value={this.state.notes} onChange={e => this.updateNotes(e.target.value)}/>
                         </div>
                         <div>
+                            {/* <ReactS3Uploader 
+                                signingUrl="/s3/sign"
+                                signingUrlMethod="GET"
+                                accept="image/*"
+                                s3path="/uploads/"
+                                /> */}
                             <button className="button" onClick={() => this.handleSubmit()}>Save Recipe</button>
                         </div>
                     </div>
