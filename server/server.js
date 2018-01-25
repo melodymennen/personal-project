@@ -17,6 +17,8 @@ app.use(session({
     resave: false
 }));
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db)
 }).catch(error => {
