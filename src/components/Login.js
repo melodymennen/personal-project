@@ -14,6 +14,7 @@ class Login extends Component {
     }
 
     componentWillMount() {
+        document.title='WTFSIMTE - Log in'
         var options = {
             allowAutocomplete: true,
             theme: {

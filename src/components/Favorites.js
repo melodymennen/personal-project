@@ -14,6 +14,10 @@ class Favorites extends Component {
         }
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE - Favorites'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

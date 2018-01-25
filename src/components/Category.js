@@ -15,6 +15,10 @@ class Category extends Component {
         }
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

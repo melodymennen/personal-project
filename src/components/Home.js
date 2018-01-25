@@ -14,6 +14,10 @@ class Home extends Component {
         }
     }
    
+    componentWillMount(){
+        document.title='WTFSIMTE - Home'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

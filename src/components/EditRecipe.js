@@ -29,6 +29,10 @@ class EditRecipe extends Component {
         this.onDrop = this.onDrop.bind(this)
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE - Edit Recipe'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

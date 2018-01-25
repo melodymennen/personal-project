@@ -14,6 +14,10 @@ class AllRecipes extends Component {
         }
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE - All Recipes'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

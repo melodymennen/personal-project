@@ -15,6 +15,10 @@ class CategorySelect extends Component {
 
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE - Recipe Categories'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){

@@ -24,6 +24,10 @@ class Recipe extends Component {
         this.sendShit = this.sendShit.bind(this)
     }
 
+    componentWillMount(){
+        document.title='WTFSIMTE'
+    }
+
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if(response.data){
