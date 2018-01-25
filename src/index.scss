@@ -10,7 +10,7 @@ $logo: 'https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/person
 $header_gradient: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgba(10, 10, 10, 0.9)),color-stop(1, rgba(10, 10, 10, 0.40)));
 $splash_gradient: -webkit-radial-gradient(center center, ellipse farthest-corner,rgb(34, 32, 34) 62.4%,rgb(34, 32, 34) 62.4%,rgba(34, 32, 34, 0.30) 100%);
 $transparent_background: rgba(255, 255, 255, 0.2);
-// $transparent_background_dark: rgba(34, 32, 34, 0.3);
+$transparent_background_dark: rgba(34, 32, 34, 0.6);
 $black_background: rgba(10,10,10, 1);
 $font_family_1: 'Poppins', sans-serif;
 $text_shadow: 1px 2px 2px black;
@@ -90,7 +90,8 @@ a {
 	background-repeat: no-repeat;
     @include background-size();
     background-position: center;
-	display: flex;
+    display: flex;
+    flex-direction: column;
 	align-items: center;
 }
 
@@ -101,6 +102,12 @@ a {
 	display: flex;
 	flex-direction: column;
 	background-image: $splash_gradient;
+}
+
+.user-info {
+    width: 100%;
+    text-align: center;
+    background-color: $transparent_background_dark;
 }
 
 .logo {

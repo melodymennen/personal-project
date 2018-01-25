@@ -52,6 +52,7 @@ class Login extends Component {
                         </div>
                         {/* <Link to="/home">I dont want to log in.</Link> */}
                     </div>
+                    <div className="user-info">To login as a guest, use email: user7guest@gmail.com password: user7guest</div>
                 </div>
             </div>
         )

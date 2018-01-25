@@ -53,6 +53,7 @@ a:visited {
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   align-items: center; }
 
 .splash {
@@ -62,6 +63,11 @@ a:visited {
   display: flex;
   flex-direction: column;
   background-image: -webkit-radial-gradient(center center, ellipse farthest-corner, #222022 62.4%, #222022 62.4%, rgba(34, 32, 34, 0.3) 100%); }
+
+.user-info {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(34, 32, 34, 0.6); }
 
 .logo {
   margin: 20px 10px;
