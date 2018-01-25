@@ -84,7 +84,6 @@ module.exports = {
         const { user } = req.session
 
         db.read_all_recipes([user.id]).then(recipes => {
-
             res.status(200).json(recipes[Math.floor((Math.random() * recipes.length-1) + 1)])
         }).catch(error => console.log('read all recipes for random error',error))
     }
