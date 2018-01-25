@@ -87,9 +87,6 @@ AWS.config.update({
         }, (err) => {
         console.log('upload error', err)
         if (err) return res.status(400).send(err)
-        console.log(process.env.AWS_ACCESS_KEY_ID)
-        console.log(process.env.AWS_SECRET_ACCESS_KEY)
-        console.log(`https://s3-${process.env.REGION}.amazonaws.com/${process.env.BUCKET}/${fileName}`)
         res.send(`https://s3-${process.env.REGION}.amazonaws.com/${process.env.BUCKET}/${fileName}`)
     })
 })
