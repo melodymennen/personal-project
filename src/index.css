@@ -107,7 +107,6 @@ a:visited {
   background-image: url("https://s3-us-west-1.amazonaws.com/muffin-bucket-bucket-o-muffins/personal-project/tomato+mushroom"); }
 
 .welcome {
-  width: 300px;
   margin: 20px auto;
   display: flex;
   justify-content: center;
@@ -138,7 +137,7 @@ a:visited {
 
 .recipe {
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 10px 40px;
   width: 80%;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.2); }
@@ -154,7 +153,11 @@ a:visited {
   text-shadow: 1px 2px 2px black; }
 
 .recipe-photo {
+  margin: 10px 0;
   background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px; }
