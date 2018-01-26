@@ -79,10 +79,15 @@ class EditRecipe extends Component {
         .post('/upload')
         .attach('recipe_image', files[0])
         .end((error, response) => {
-            if (error) console.log('on drop error',error)
-            console.log('File Uploaded Succesfully')
-            console.log(response.text)
-            this.setState({ pictureUrl: response.text})
+            if (error) {
+                console.log('on drop error',error)
+                alert('File Not Uploaded')
+            } else {
+                alert('File Uploaded Succesfully')
+                console.log('File Uploaded Succesfully')
+                console.log(response.text)
+                this.setState({ pictureUrl: response.text})
+            }
         })
     }
 
@@ -104,7 +109,6 @@ class EditRecipe extends Component {
 
     render () {
         const array = this.state.ingredients.split('\n')
-        console.log(array)
         return (
             <div>
                 <div>
