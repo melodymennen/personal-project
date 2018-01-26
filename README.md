@@ -1,6 +1,6 @@
 # WTFSIMTE
 
-## For the live version, click [here](http://www.wtfsimte.com).
+## For the live version, click [here](http://wtfsimte.com).
 
 ## Overview
 What the Fork Should I Make to Eat? is an online recipe organizer. You can add your own recipes, view them by category, mark your favorites, add a recipe photo and more. 
