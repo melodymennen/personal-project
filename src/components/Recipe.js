@@ -117,7 +117,7 @@ class Recipe extends Component {
                     <Link to="/all-recipes">back to all recipes</Link>
                 </div>
                 {this.state.recipe && 
-                        <div className="tile-wrapper">
+                        <div className="recipe">
                             {recipe}
                         </div>
                 }
