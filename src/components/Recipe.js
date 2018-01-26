@@ -116,9 +116,14 @@ class Recipe extends Component {
                 <div className="back">
                     <Link to="/all-recipes">back to all recipes</Link>
                 </div>
-                <div className="recipe">
-                    {recipe}
-                </div>
+                {this.state.recipe && 
+                        <div className="tile-wrapper">
+                            {recipe}
+                        </div>
+                }
+                {this.state.recipe.length === 0 && 
+                    <div className="no-favs">There are no recipes to display. Add a recipe to begin!</div>
+                }
             </div>
         )
     }

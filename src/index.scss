@@ -329,6 +329,15 @@ a {
     background-position: center;
 }
 
+.no-favs {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;    
+    margin: 0;
+    text-shadow: $text_shadow;
+}
+
 // media queries 
 @media(max-width: 905px){
 // Header 
@@ -366,6 +375,7 @@ a {
 .category, .notes {
     width: 95%;
 }
+
 // Recipe 
 .recipe {
     padding: 10px 30px;

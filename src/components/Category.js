@@ -49,9 +49,14 @@ class Category extends Component {
                     <div className="back">
                         <Link to="/all-categories">back to all categories</Link>
                     </div>
-                    <div className="tile-wrapper">
-                        {category}
-                    </div>
+                    {this.state.category && 
+                        <div className="tile-wrapper">
+                            {category}
+                        </div>
+                    }
+                    {this.state.category.length === 0 && 
+                        <div className="no-favs">There are no recipes to display. Add a recipe to begin!</div>
+                    }
                 </div>
             </div>
         )

@@ -262,6 +262,14 @@ a:visited {
   background-size: cover;
   background-position: center; }
 
+.no-favs {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0;
+  text-shadow: 1px 2px 2px black; }
+
 @media (max-width: 905px) {
   .page-name {
     display: none; }

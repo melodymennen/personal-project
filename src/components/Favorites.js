@@ -28,6 +28,7 @@ class Favorites extends Component {
         })
         axios.get(`/api/favorites/${this.props.match.params.user_id}`).then(response => {
             this.setState({favorites: response.data})
+            console.log(this.state.favorites)
         })
     }
 
@@ -48,9 +49,14 @@ class Favorites extends Component {
                     <div className="back">
                         <Link to="/home">back to home</Link>
                     </div>
-                    <div className="tile-wrapper">
-                        {favorites}
-                    </div>
+                    {this.state.favorites && 
+                        <div className="tile-wrapper">
+                            {favorites}
+                        </div>
+                    }
+                    {this.state.favorites.length === 0 && 
+                        <div className="no-favs">There are no favorites to display.</div>
+                    }
                 </div>
             </div>
         )
