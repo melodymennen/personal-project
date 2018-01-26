@@ -117,9 +117,9 @@ class Recipe extends Component {
                     <Link to="/all-recipes">back to all recipes</Link>
                 </div>
                 {this.state.recipe && 
-                        <div className="recipe">
-                            {recipe}
-                        </div>
+                    <div className="recipe">
+                        {recipe}
+                    </div>
                 }
                 {this.state.recipe.length === 0 && 
                     <div className="no-favs">There are no recipes to display. Add a recipe to begin!</div>

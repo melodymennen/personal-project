@@ -27,8 +27,60 @@ $border_radius: 5px;
     background-size: cover;
 }
 
+@mixin animation {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+} 
+
+@mixin slide {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInUp {
+    0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -87,7 +139,8 @@ a {
 .body {
     min-height: 100vh;
 	background-image: url($login_background);
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     @include background-size();
     background-position: center;
     display: flex;
@@ -151,16 +204,17 @@ a {
 
 .home {
     min-height: 100vh;
-    background-size: cover;
+    @include background-size();
     background-image: url($home_background);
+    background-attachment: fixed;
 }
 
 .welcome {
-    // width: 300px;
     margin: 20px auto;
     display: flex;
     justify-content: center;
     font-size: 1.25em;
+    @include slide();
 }
 
 .tile-wrapper {
@@ -168,7 +222,8 @@ a {
 	flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-	margin: 30px 20px;
+    margin: 30px 20px;
+    @include slide();
 }
 
 .tile {
@@ -195,6 +250,7 @@ a {
     width: 75%;
     border-radius: $border_radius;
     background-color: $transparent_background;
+    @include slide();
 }
 
 .icon-wrapper {
@@ -208,6 +264,7 @@ a {
 .back {
     margin: 15px 24px;
     text-shadow: $text_shadow;
+    @include slide();
 }
 
 .recipe-photo {
@@ -307,6 +364,7 @@ a {
     min-height: 100vh;
     width: 100%;
     background-image: url($recipe_background);
+    background-attachment: fixed;
     @include background-size();
     background-position: top;
 }
@@ -316,6 +374,7 @@ a {
     min-height: 100vh;
     width: 100%;
     background-image: url($category_background);
+    background-attachment: fixed;
     @include background-size();
     background-position: center;
 }
@@ -325,6 +384,7 @@ a {
     min-height: 100vh;
     width: 100%;
     background-image: url($favorites_background);
+    background-attachment: fixed;
     @include background-size();
     background-position: center;
 }
@@ -336,6 +396,7 @@ a {
     padding: 0 20px;    
     margin: 0;
     text-shadow: $text_shadow;
+    @include animation();
 }
 
 // media queries 
