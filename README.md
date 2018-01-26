@@ -13,11 +13,5 @@ What the Fork Should I Make to Eat? is an online recipe organizer. You can add y
 ## Upcoming Features:
 - connect to a third party API to help users find new recipes
 
-## Tech Stack:
-- framework is `react`
-- server written in `nodejs`
-- `auth0` for authorization and storage of user info
-- `redux` to manage user state
-- `massive` and `express` to connect to my `heroku`-hosted db
-- `postgreSQL` to communicate with my db
-- text ingridient lists with `twilio` 
+## Tech:
+I used many technologies when making this project including but not limited to: React | Redux | JavaScript(ES6) | SCSS | Sass | NodeJS | ExpressJS | Massive | PostgreSQL | Auth0 | Twilio
