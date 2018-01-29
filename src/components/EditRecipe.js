@@ -108,7 +108,7 @@ class EditRecipe extends Component {
     }
 
     render () {
-        const array = this.state.ingredients.split('\n')
+        // const array = this.state.ingredients.split('\n')
         return (
             <div>
                 <div>
