@@ -25,3 +25,12 @@ What the Fork Should I Make to Eat? is an online recipe organizer. You can add y
 
 ## Tech:
 I used many technologies when making this project including but not limited to: React | Redux | JavaScript(ES6) | SCSS | Sass | NodeJS | ExpressJS | Massive | PostgreSQL | Auth0 | Twilio
+
+## Preview
+![Landing Page](https://github.com/melodymennen/personal-project/blob/master/assets/landing%20page-wtfsimte.com.png)
+
+![All Recipes Page](https://github.com/melodymennen/personal-project/blob/master/assets/all%20recipes-wtfsimte.com.png)
+
+![Add/Edit Recipe Page](https://github.com/melodymennen/personal-project/blob/master/assets/edit%20recipe-wtfsimte.com.png)
+
+![Recipe Page](https://github.com/melodymennen/personal-project/blob/master/assets/recipe-wtfsimte.com.png)
