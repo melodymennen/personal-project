@@ -20,6 +20,10 @@ What the Fork Should I Make to Eat? is an online recipe organizer. You can add y
 - edit recipes, add photos to recipes and even text yourself recipe ingredients
 - display a recipe at random
 
+<!-- * Front end based on React / Redux, using Sass for responsive styling
+* Back end runs on Node using Express and Express Session, connected to a PostgreSQL database
+* Utilizes AWS S3 and React DropZone for image uploads and storage -->
+
 ## Upcoming Features:
 - connect to a third party API to help users find new recipes
 
